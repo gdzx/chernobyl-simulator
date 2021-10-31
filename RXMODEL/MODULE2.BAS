@@ -6,7 +6,7 @@ Declare Function extfn00C8 Lib "chrnob.dll" Alias "GETRGB" (p1&) As Long
 Declare Function extfn00E6 Lib "chrnob.dll" Alias "GETUNI" () As Integer
 Declare Sub extsub00D2 Lib "chrnob.dll" Alias "GTPNAM" (p1%, ByVal p2$)
 Declare Sub extsub00DC Lib "chrnob.dll" Alias "GTPUNI" (p1%, ByVal p2$)
-Declare Sub extsub00F0 Lib "chrnob.dll" Alias "SETUNI" (ByVal p1 As Any)
+Declare Sub extsub00F0 Lib "chrnob.dll" Alias "SETUNI" (p1%)
 Dim m002E(2) As Single
 Dim m0044(2) As Single
 Dim m005A(2) As Single
@@ -111,7 +111,7 @@ model_timer.uni_m_or_a(l0148%).Checked = True
 model_timer.uni_m_or_a(1 - l0148%).Checked = False
 End Sub
 
-Sub sub01B4 (p018A)
+Sub sub01B4 (p018A As Integer)
  Call extsub00F0(p018A)
  model_timer.uni_m_or_a(p018A).Checked = True
  model_timer.uni_m_or_a(1 - p018A).Checked = False

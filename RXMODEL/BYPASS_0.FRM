@@ -161,6 +161,7 @@ Declare Sub extsub13A9 Lib "chrnob.dll" Alias "SETBYS" (p1!, p2%)
 Const mc001E = 3 ' &H3%
 Dim m0020 As Integer
 Const mc0032 = 1 ' &H1%
+Const mc0034 = 2 ' &H2%
 
 Sub alarm_it_Click ()
  Call sub04DC

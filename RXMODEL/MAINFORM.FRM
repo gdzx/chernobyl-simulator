@@ -208,6 +208,7 @@ Declare Sub extsub03CA Lib "chrnob.dll" Alias "XEONOF" (p1%)
 Const mc0072 = 1 ' &H1%
 Const mc008A = 3 ' &H3%
 Const mc01D8 = 1 ' &H1%
+Const mc01DA = 2 ' &H2%
 
 Sub air_eject_it_Click ()
 Dim l007A As String

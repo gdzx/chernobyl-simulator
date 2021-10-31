@@ -280,6 +280,7 @@ Declare Sub extsub0C51 Lib "chrnob.dll" Alias "SETDAR" (p1!, p2%)
 Const mc0020 = 3 ' &H3%
 Dim m0022 As Integer
 Const mc005C = 1 ' &H1%
+Const mc005E = 2 ' &H2%
 
 Sub alarm_it_Click ()
  Call sub04DC

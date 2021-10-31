@@ -374,13 +374,13 @@ Declare Function extfn03C0 Lib "chrnob.dll" Alias "GETXEF" () As Integer
 Declare Function extfn041A Lib "chrnob.dll" Alias "hepast" (p1!, p2%) As Integer
 Declare Sub extsub1BF6 Lib "chrnob.dll" Alias "SETAVI" (p1%, p2%)
 Declare Function extfn03F2 Lib "chrnob.dll" Alias "SETCND" (p1!, p2%) As Integer
-Declare Function extfn0C8D Lib "chrnob.dll" Alias "SETECC" (p1!, p2%, p3 As type, p4 As type) As Integer
+Declare Function extfn0C8D Lib "chrnob.dll" Alias "SETECC" (p1!, p2%, p3%, p4%) As Integer
 Declare Function extfn0264 Lib "chrnob.dll" Alias "setmal" (p1%, p2%) As Integer
 Declare Sub extsub0C5B Lib "chrnob.dll" Alias "SETPAR" (p1%, p2%)
-Declare Sub extsub0C83 Lib "chrnob.dll" Alias "SETRUP" (p1!, p2 As type, p3 As type)
+Declare Sub extsub0C83 Lib "chrnob.dll" Alias "SETRUP" (p1!, p2%, p3%)
 Declare Sub extsub03CA Lib "chrnob.dll" Alias "XEONOF" (p1%)
-Dim m0028
-Dim m002A
+Dim m0028 As Integer
+Dim m002A As Integer
 Dim m002C As Integer
 Dim m002E As Integer
 

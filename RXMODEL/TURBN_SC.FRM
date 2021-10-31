@@ -1070,7 +1070,7 @@ Sub Spin1_SpinUp ()
 End Sub
 
 Sub Text1_KeyDown (KeyCode As Integer, Shift As Integer)
-Dim l0056
+Dim l0056 As Single
 Static m0058 As Integer
 Dim l0066 As Integer
 Dim l0068 As Single

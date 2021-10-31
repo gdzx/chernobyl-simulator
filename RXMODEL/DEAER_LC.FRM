@@ -800,6 +800,7 @@ Declare Function extfn0264 Lib "chrnob.dll" Alias "setmal" () As Integer
 Const mc0024 = 3 ' &H3%
 Dim m0026 As Integer
 Const mc008A = 1 ' &H1%
+Const mc008C = 2 ' &H2%
 
 Sub alarm_it_Click ()
  Call sub04DC

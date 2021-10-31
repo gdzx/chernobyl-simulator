@@ -21,9 +21,9 @@ Dim l0026 As Integer
  fn00ED = l0026
 End Function
 
-Function fn00FF (p002A As Single, p002C As Single) As Integer
+Function fn00FF (p002A As Single, p002C As Single, p3 As Integer) As Integer
 ' called (p1!, p2!, p3%)
- fn00FF = Int(CSng(1000 - gv00C8) * p002C / 1000# + p002A)
+ fn00FF = Int(CSng(1000 - p3) * p002C / 1000# + p002A)
 End Function
 
 Sub sub010D (p0032 As Integer, p0036 As Form)

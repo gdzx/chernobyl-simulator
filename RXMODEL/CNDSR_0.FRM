@@ -355,6 +355,7 @@ Declare Function extfn0438 Lib "chrnob.dll" Alias "GETCND" (p1%) As Single
 Const mc0020 = 3 ' &H3%
 Dim m0022 As Integer
 Const mc005A = 1 ' &H1%
+Const mc005C = 2 ' &H2%
 
 Sub alarm_it_Click ()
  Call sub04DC

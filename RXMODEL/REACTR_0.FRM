@@ -174,6 +174,7 @@ Option Explicit
 Const mc001E = 3 ' &H3%
 Dim m0020 As Integer
 Const mc002E = 1 ' &H1%
+Const mc0030 = 2 ' &H2%
 
 Sub alarm_it_Click ()
 ' Const mc0030 = 2 ' &H2%

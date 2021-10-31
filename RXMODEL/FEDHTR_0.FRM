@@ -336,6 +336,7 @@ End
 ' FEDHTR_0.FRM
 Option Explicit
 Const mc0022 = 1 ' &H1%
+Const mc0024 = 2 ' &H2%
 
 Sub Form_Load ()
 ' Const mc0024 = 2 ' &H2%

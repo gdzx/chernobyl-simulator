@@ -43,7 +43,7 @@ Dim l00FA As Integer
   Next l00EC
 End Sub
 
-Sub sub07DE (p0142)
+Sub sub07DE (p0142 As Integer)
  Load TRENDSv
  TRENDSv.Show (0)
  TRENDSv.Left = 0
