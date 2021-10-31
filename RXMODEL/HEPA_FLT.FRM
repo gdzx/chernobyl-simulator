@@ -277,3 +277,4 @@ Dim l0048 As Integer
  Image3(Index) = Image1(3)
  Image3(1 - Index) = Image1(0)
 End Sub
+

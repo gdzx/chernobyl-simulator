@@ -567,10 +567,11 @@ End Sub
 
 Sub Spin2_SpinDown (Index%)
  DoEvents
- Call extsub0316(-(.005# + Index * .045#), 1)
+ Call extsub0316(-(.005 + Index * .045), 1)
 End Sub
 
 Sub Spin2_SpinUp (Index%)
  DoEvents
- Call extsub0316((.005# + Index * .045#), 1)
+ Call extsub0316((.005 + Index * .045), 1)
 End Sub
+

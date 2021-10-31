@@ -103,14 +103,14 @@ Dim l0056 As Integer
 Dim l0058 As Integer
 Dim l005A As Integer
  m0026 = extfn04C4()
- If  gv00D0 Then
+ If gv00D0 Then
   Unload TRENDSv
  End If
 l002E = Chr(13) & Chr(10)
 l002C = filList.Path & "\" & txtSearchSpec
-If  cmdRest_Save.Caption = "&Save" Then
+If cmdRest_Save.Caption = "&Save" Then
   l004E% = fn08D2(l002C, 1)
-  If  l004E% = 1 Then
+  If l004E% = 1 Then
    l004E% = extfn0424(3) / 2
    l0056% = extfn042E(gv00A0(0), l004E%)
    On Error GoTo L104AA
@@ -125,21 +125,21 @@ If  cmdRest_Save.Caption = "&Save" Then
    gv001E = "Chernobyl RBMK Reactor Unit 3 <" & txtSearchSpec & ">"
    txtSearchSpec.Text = "*.ICD"
    Unload GETFILE
-   If  m0026 Then
+   If m0026 Then
     Call sub07DE(False)
    End If
   End If
 ElseIf cmdRest_Save.Caption = "&Restore" Then
  l004E% = fn08D2(l002C, 2)
- If  l004E% = 1 Then
+ If l004E% = 1 Then
   l004E% = extfn0424(3) / 2
   On Error GoTo L10564
-  If  (FileLen(l002C) = l004E% * 4) Then
+  If (FileLen(l002C) = l004E% * 4) Then
    l0028 = FreeFile
    Open l002C For Binary As l0028
    Get l0028, 1, gv00A0(0)
    For l0058% = 1 To l004E%
-    If  EOF(l0028) = False Then
+    If EOF(l0028) = False Then
      Get l0028, , gv00A0(l0058%)
    End If
    Next l0058%
@@ -152,11 +152,11 @@ ElseIf cmdRest_Save.Caption = "&Restore" Then
    gv009C = extfn08C8(1)
    gv0090 = extfn08C8(2)
    Call sub0B64(gv0090)
-   If  gv007E Then
+   If gv007E Then
     INFO_DISPLAY.Label1(6) = "who r you - " & Format(gv009C, "#0")
     INFO_DISPLAY.Label1(7) = "random - " & Format(gv0090, "0")
    End If
-   If  m0026 Then
+   If m0026 Then
      Call sub07DE(False)
    End If
    Call extsub0474(20, 1)
@@ -170,7 +170,7 @@ L104AA:
   l0030 = "ERROR saving game file " & l002C & l002E
   l0030 = l0030 & "Choose OK to continue."
   l004E% = MsgBox(l0030, 64, "File Message")
-   If  m0026 Then
+   If m0026 Then
      Call sub07DE(False)
    End If
  Exit Sub
@@ -179,7 +179,7 @@ L10564:
   l0030 = "ERROR restoring game file " & l002C & l002E
   l0030 = l0030 & "Choose OK to continue."
   l004E% = MsgBox(l0030, 64, "File Message")
-   If  m0026 Then
+   If m0026 Then
      Call sub07DE(False)
    End If
  Exit Sub
@@ -187,7 +187,7 @@ End Sub
 
 Sub Command1_Click ()
   Unload GETFILE
-  If  m0026 Then
+  If m0026 Then
   End If
 End Sub
 
@@ -210,13 +210,13 @@ L106A4:
 End Sub
 
 Sub filList_Click ()
-  If  filList.ListIndex >= 0 Then
+  If filList.ListIndex >= 0 Then
     txtSearchSpec.Text = filList.List(filList.ListIndex)
   End If
 End Sub
 
 Sub filList_DblClick ()
-  If  filList.ListIndex >= 0 Then
+  If filList.ListIndex >= 0 Then
     txtSearchSpec.Text = filList.List(filList.ListIndex)
   End If
 End Sub
@@ -263,3 +263,4 @@ Sub txtSearchSpec_GotFocus ()
     txtSearchSpec.SelStart = 0
     txtSearchSpec.SelLength = Len(txtSearchSpec.Text)
 End Sub
+

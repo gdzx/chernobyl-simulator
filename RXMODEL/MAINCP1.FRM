@@ -719,14 +719,14 @@ Dim l0038 As Integer
 Dim l003C As Integer
   Call extsub0366(m001C(0))
   l0032% = 1 - Index Mod 2
-  If  Index < 6 Then
+  If Index < 6 Then
    l0034% = Int(Index / 2)
-   If  l0032% = 1 Then
-    If  (m001C(l0034%) > .99# And m001C(l0034% + 6) < .01#) Then
+   If l0032% = 1 Then
+    If (m001C(l0034%) > .99 And m001C(l0034% + 6) < .01) Then
       gv008C = 0
       l0038% = l0034% + 7
       l003C% = fn0528(l0038%, Me)
-      If  gv01CE(l0034%) <> 1 And l003C% = 0 Then
+      If gv01CE(l0034%) <> 1 And l003C% = 0 Then
        Call sub09C9(1, model_timer)
       End If
      Call extsub0348(l0034%, 1)
@@ -753,10 +753,11 @@ End Sub
 
 Sub Spin1_SpinDown ()
  DoEvents
- Call extsub1423(-.02#, 0)
+ Call extsub1423(-.02, 0)
 End Sub
 
 Sub Spin1_SpinUp ()
  DoEvents
- Call extsub1423(.02#, 0)
+ Call extsub1423(.02, 0)
 End Sub
+

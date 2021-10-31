@@ -1002,11 +1002,11 @@ Dim l0028 As Integer
 Dim l002C As Integer
 l0024! = CSng(Index)
 Call extsub0C47(l0024!, 1)
-If  Index = 1 Then
+If Index = 1 Then
  gv008C = 0
  For l0028% = 65 To 67
   l002C% = fn0528(l0028%, Me)
-  If  l002C% > 0 Then
+  If l002C% > 0 Then
    Exit For
   End If
  Next l0028%
@@ -1021,10 +1021,10 @@ End Sub
 
 Sub Command5_Click (Index%)
 Dim l003C As Single
-  If  Index = 1 Then
-   If  Abs(gv01B4) <= 3 Then
+  If Index = 1 Then
+   If Abs(gv01B4) <= 3 Then
     l003C! = Gauge1(2).Value
-    If  (l003C! > 12.5# And l003C! < 37.5#) Then
+    If (l003C! > 12.5 And l003C! < 37.5) Then
       Call extsub0C47(1#, 7)
     End If
    End If
@@ -1061,12 +1061,12 @@ End Sub
 
 Sub Spin1_SpinDown ()
  DoEvents
- Call extsub0C47(-.005#, 2)
+ Call extsub0C47(-.005, 2)
 End Sub
 
 Sub Spin1_SpinUp ()
  DoEvents
- Call extsub0C47(.005#, 2)
+ Call extsub0C47(.005, 2)
 End Sub
 
 Sub Text1_KeyDown (KeyCode As Integer, Shift As Integer)
@@ -1074,8 +1074,8 @@ Dim l0056
 Static m0058 As Integer
 Dim l0066 As Integer
 Dim l0068 As Single
-If  m0058 = 0 Then
- If  KeyCode <> 46 Then
+If m0058 = 0 Then
+ If KeyCode <> 46 Then
   Text1.Text = ""
   m0058 = 1
  Else
@@ -1083,15 +1083,15 @@ If  m0058 = 0 Then
  End If
 End If
 gv010C = True
-If  KeyCode = 13 Then
+If KeyCode = 13 Then
   gv019C = 0
   m0058 = 0
   gv010C = False
-  If  Text1.Text = "" Then
+  If Text1.Text = "" Then
       l0066% = extfn044C(l0056, 3)
   Else
       l0068! = Val(Text1.Text)
-      If  l0068! < 20# And gv01B2 = 0 Then
+      If l0068! < 20# And gv01B2 = 0 Then
         l0068! = l0068! * 1000#
       End If
       l0056 = fn0167(l0068!)
@@ -1104,15 +1104,15 @@ End Sub
 
 Sub Timer1_Timer ()
 Dim l0070 As Integer
- If  gv01B4 = 0 Then
-  If  gv01B6 = 1 Then
+ If gv01B4 = 0 Then
+  If gv01B6 = 1 Then
    l0070% = 25
   Else
    l0070% = 80
   End If
  Else
   l0070% = (Gauge1(2).Value + gv01B4)
-  If  l0070% > 100 Then
+  If l0070% > 100 Then
    l0070% = l0070% - 100
   ElseIf l0070% < 0 Then
    l0070% = 100 + l0070%
@@ -1120,3 +1120,4 @@ Dim l0070 As Integer
  End If
  Gauge1(2).Value = l0070%
 End Sub
+

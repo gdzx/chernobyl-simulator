@@ -809,16 +809,8 @@ Sub arrange_it_Click ()
  MainForm.Arrange mc0024
 End Sub
 
-Sub sub1016 ()
- Call sub04E8
-End Sub
-
 Sub cascade_it_Click ()
  MainForm.Arrange m0026
-End Sub
-
-Sub sub0CF9 ()
- Call sub0538
 End Sub
 
 Sub Command1_Click (Index%)
@@ -827,11 +819,11 @@ Dim l002E As Integer
 Dim l0032 As Integer
 l002A! = CSng(Index)
 Call extsub0C51(l002A!, 1)
-If  Index = 1 Then
+If Index = 1 Then
  gv008C = 0
  For l002E% = 50 To 52
   l0032% = fn0528(l002E%, Me)
-  If  l0032% > 0 Then
+  If l0032% > 0 Then
    Exit For
   End If
  Next l002E%
@@ -845,11 +837,11 @@ Dim l003A As Integer
 Dim l003C As Integer
  l0036% = 1 - Index Mod 2
  l0038% = Int(Index / 2)
- If  l0036% = 1 Then
+ If l0036% = 1 Then
   gv008C = 0
   l003A% = l0038% + 1
   l003C% = fn0528(l003A%, Me)
-  If  extfn0438(12 + l0038%) < .1# And l003C% = 0 Then
+  If extfn0438(12 + l0038%) < .1 And l003C% = 0 Then
     Call sub09C9(1, model_timer)
   End If
  End If
@@ -884,14 +876,6 @@ Dim l005C As Integer
  l005C% = extfn03F2(l0058!, l005A%)
 End Sub
 
-Sub sub0D69 ()
- Call sub0544
-End Sub
-
-Sub sub0DDA ()
- Call sub0750
-End Sub
-
 Sub Form_Load ()
  gv00FC = True
 End Sub
@@ -908,24 +892,20 @@ Dim l0080 As Integer
  l006C% = Index Mod 3
  l006E% = Int(Index / 3)
  For l0070% = 0 To 2
-  If  l006C% = l0070% Then
+  If l006C% = l0070% Then
    Image2(l0070% + l006E% * 3) = Image1(1)
   Else
    Image2(l0070% + l006E% * 3) = Image1(0)
   End If
  Next l0070%
  l0070% = l006E% + 1
- If  (l006C% = 0) Then
+ If (l006C% = 0) Then
   l0080% = extfn0406(100#, l0070%)
  ElseIf l006C% = 1 Then
   l0080% = extfn0406(0#, l0070%)
  Else
   l0080% = extfn0406(-15#, l0070%)
  End If
-End Sub
-
-Sub sub0F02 ()
- Call sub077D
 End Sub
 
 Sub restore_it_Click ()
@@ -938,22 +918,22 @@ End Sub
 
 Sub Spin1_SpinDown ()
  DoEvents
- Call extsub0C51(-.02#, 15)
+ Call extsub0C51(-.02, 15)
 End Sub
 
 Sub Spin1_SpinUp ()
  DoEvents
- Call extsub0C51(.02#, 15)
+ Call extsub0C51(.02, 15)
 End Sub
 
 Sub Spin5_SpinDown ()
  DoEvents
- Call extsub0C51(-.005#, 8)
+ Call extsub0C51(-.005, 8)
 End Sub
 
 Sub Spin5_SpinUp ()
  DoEvents
- Call extsub0C51(.005#, 8)
+ Call extsub0C51(.005, 8)
 End Sub
 
 Sub Spin6_SpinDown ()
@@ -961,7 +941,7 @@ Dim l0082 As Single
 Dim l0084 As Integer
  DoEvents
  l0084% = extfn0442(l0082!, 1)
- l0082! = l0082! - .5#
+ l0082! = l0082! - .5
  Call extsub0C51(l0082!, 3)
 End Sub
 
@@ -972,8 +952,33 @@ Dim l0088 As Integer
 ' Const mc008C = 2 ' &H2%
  DoEvents
  l0088% = extfn0442(l0086!, 1)
- l0086! = l0086! + .5#
+ l0086! = l0086! + .5
  Call extsub0C51(l0086!, 3)
+End Sub
+
+Sub sub0CF9 ()
+ Call sub0538
+End Sub
+
+Sub sub0D69 ()
+ Call sub0544
+End Sub
+
+Sub sub0DDA ()
+ Call sub0750
+End Sub
+
+Sub sub0F02 ()
+ Call sub077D
+End Sub
+
+Sub sub0FD5 ()
+' Const mc008C = 2 ' &H2%
+ Call sub07F1
+End Sub
+
+Sub sub1016 ()
+ Call sub04E8
 End Sub
 
 Sub tile_h_it_Click ()
@@ -991,7 +996,3 @@ Sub trend_it_Click ()
  Call sub07D2
 End Sub
 
-Sub sub0FD5 ()
-' Const mc008C = 2 ' &H2%
- Call sub07F1
-End Sub

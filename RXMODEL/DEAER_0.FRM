@@ -184,14 +184,29 @@ Sub arrange_it_Click ()
  MainForm.Arrange mc001E
 End Sub
 
-Sub sub1016 ()
-' Const mc0028 = 2 ' &H2%
- Call sub04E8
-End Sub
-
 Sub cascade_it_Click ()
 ' Const mc0028 = 2 ' &H2%
  MainForm.Arrange m0020
+End Sub
+
+Sub Form_Load ()
+' Const mc0028 = 2 ' &H2%
+ gv00FA = True
+End Sub
+
+Sub Form_Unload (Cancel As Integer)
+' Const mc0028 = 2 ' &H2%
+ gv00FA = False
+End Sub
+
+Sub restore_it_Click ()
+' Const mc0028 = 2 ' &H2%
+ Call sub078B
+End Sub
+
+Sub save_it_Click ()
+' Const mc0028 = 2 ' &H2%
+ Call sub0795
 End Sub
 
 Sub sub0CF9 ()
@@ -209,29 +224,19 @@ Sub sub0DDA ()
  Call sub0750
 End Sub
 
-Sub Form_Load ()
-' Const mc0028 = 2 ' &H2%
- gv00FA = True
-End Sub
-
-Sub Form_Unload (Cancel As Integer)
-' Const mc0028 = 2 ' &H2%
- gv00FA = False
-End Sub
-
 Sub sub0F02 ()
 ' Const mc0028 = 2 ' &H2%
  Call sub077D
 End Sub
 
-Sub restore_it_Click ()
+Sub sub0FD5 ()
 ' Const mc0028 = 2 ' &H2%
- Call sub078B
+ Call sub07F1
 End Sub
 
-Sub save_it_Click ()
+Sub sub1016 ()
 ' Const mc0028 = 2 ' &H2%
- Call sub0795
+ Call sub04E8
 End Sub
 
 Sub tile_h_it_Click ()
@@ -249,7 +254,3 @@ Sub trend_it_Click ()
  Call sub07D2
 End Sub
 
-Sub sub0FD5 ()
-' Const mc0028 = 2 ' &H2%
- Call sub07F1
-End Sub

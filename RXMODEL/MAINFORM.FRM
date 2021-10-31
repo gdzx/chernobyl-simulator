@@ -217,7 +217,7 @@ Dim l0084 As Integer
 ' Const mc008A = 3 ' &H3%
  l007A = Chr(13) & Chr(10)
    l007E% = extfn0264(72, 0)
-   If  l007E% < 0 Then
+   If l007E% < 0 Then
     l0080 = "Comrade, have you checked the budget lately ?"
     l0080 = l0080 & l007A & "You do not have enough money in the budget"
     l0080 = l0080 & l007A & " to repair a Steam Air Ejector."
@@ -251,92 +251,18 @@ Static m0094 As Integer
  controlboard.Top = 0
 End Sub
 
-Sub sub0CF9 ()
- Call sub0538
-End Sub
-
 Sub cond_l_it_Click ()
 Dim l0096 As Integer
 Dim l0098 As Variant
 Dim l009C As Variant
 Dim l00A0 As Integer
    l0096% = extfn0264(71, 0)
-   If  l0096% < 0 Then
+   If l0096% < 0 Then
     l0098 = "Comrade, have you checked the budget lately ?"
     l0098 = l0098 & l009C & "You do not have enough money in the budget"
     l0098 = l0098 & l009C & "to repair the Condenser Tubes at this time."
     l00A0% = MsgBox(l0098, 64, "Budget Office Memo")
    End If
-End Sub
-
-Sub sub0D1E (p00A2 As Integer)
- Select Case gv00BA
- Case 0
-  If  p00A2 = 1 Then
-   Load REACT_ROD
-   REACT_ROD.Show (0)
-   REACT_ROD.WindowState = 0
-  ElseIf p00A2 = 2 Then
-   Load RX_CONTROL
-   RX_CONTROL.Show (0)
-   RX_CONTROL.WindowState = 0
-  End If
- Case 1
-  If  p00A2 = 1 Then
-   Load bypass_0
-   bypass_0.Show (0)
-   bypass_0.WindowState = 0
-  End If
- Case 2
-  If  p00A2 = 2 Then
-   Load Drain_ctrl
-   Drain_ctrl.Show (0)
-   Drain_ctrl.WindowState = 0
-  ElseIf p00A2 = 3 Then
-   Call sub0743
-  End If
- Case 4
- Case 5
- Case Else
- End Select
-End Sub
-
-Sub sub0D32 (p00B6 As Integer)
- Select Case gv00BA
- Case 0
- If  p00B6 = 0 Then
-  Load maincp1
-  maincp1.Show (0)
-  maincp1.WindowState = 0
- ElseIf p00B6 = 1 Then
-  Load maincp2
-  maincp2.Show (0)
-  maincp2.WindowState = 0
- End If
- Case 1
-  If  p00B6 = 0 Then
-   Load turbine_s_ctrl
-   turbine_s_ctrl.Show (0)
-   turbine_s_ctrl.WindowState = 0
-  End If
- Case 2
-  If  p00B6 = 0 Then
-   Load feed_pmp
-   feed_pmp.Show (0)
-   feed_pmp.WindowState = 0
- End If
- Case 4
-  If  p00B6 = 0 Then
-   Load deaer_L_CTRL
-   deaer_L_CTRL.Show (0)
-   deaer_L_CTRL.WindowState = 0
- Else
-   Load deaer_P_CTRL
-   deaer_P_CTRL.Show (0)
-   deaer_P_CTRL.WindowState = 0
- End If
- Case Else
- End Select
 End Sub
 
 Sub core_it_Click ()
@@ -345,25 +271,6 @@ End Sub
 
 Sub DA_f_it_Click ()
  Call sub0544
-End Sub
-
-Sub sub0D69 ()
- Call sub0544
-End Sub
-
-Sub sub0D7A ()
-Dim l00D0 As String
-Dim l00D2 As Integer
-Dim l00D4 As Variant
-Dim l00D8 As Integer
- l00D0 = Chr(13) & Chr(10)
-   l00D2% = extfn0264(73, 0)
-   If  l00D2% < 0 Then
-    l00D4 = "Comrade, have you checked the budget lately ?"
-    l00D4 = l00D4 & l00D0 & "You do not have enough money in the budget"
-    l00D4 = l00D4 & l00D0 & " to repair the Diesel ECC Pump."
-    l00D8% = MsgBox(l00D4, 64, "Budget Office Memo")
-   End If
 End Sub
 
 Sub diag_it_Click ()
@@ -379,7 +286,7 @@ Dim l00E2 As Variant
 Dim l00E6 As Integer
  l00DE = Chr(13) & Chr(10)
    l00E0% = extfn0264(73, 0)
-   If  l00E0% < 0 Then
+   If l00E0% < 0 Then
     l00E2 = "Comrade, have you checked the budget lately ?"
     l00E2 = l00E2 & l00DE & "You do not have enough money in the budget"
     l00E2 = l00E2 & l00DE & " to repair the Diesel ECC Pump."
@@ -395,22 +302,8 @@ Sub Drum_f_it_Click ()
  Call sub0750
 End Sub
 
-Sub sub0DDA ()
- Call sub0750
-End Sub
-
 Sub FH_f_it_Click ()
  Call sub0743
-End Sub
-
-Sub sub0DFC (p00E8 As Integer, p00EA As Integer)
-Dim l00EC As Variant
- If  p00EA > 0 Then
-  l00EC = "Do you really want to Terminate the Chernobyl Simulation?"
- Else
-  l00EC = "Do you really want to close the form?"
- End If
- If  MsgBox(l00EC, 36, "Application Terminated by User") = 7 Then p00E8 = True
 End Sub
 
 Sub fuel_clean_it_Click ()
@@ -420,10 +313,10 @@ Dim l00F6 As Variant
 Dim l00FA As Integer
    l00F0 = Chr(13) & Chr(10)
    l00F4% = extfn041A(0#, 5)
-   If  l00F4% >= 0 Then
+   If l00F4% >= 0 Then
     l00F4% = extfn041A(0#, 6)
    End If
-   If  l00F4% < 0 Then
+   If l00F4% < 0 Then
     l00F6 = "Comrade, have you checked the budget lately ?"
     l00F6 = l00F6 & l00F0 & "You do not have enough money in the budget"
     l00F6 = l00F6 & l00F0 & "to clean up all the dropped fuel in core."
@@ -443,9 +336,9 @@ l0116 = Chr(13) & Chr(10)
  Call extsub046A(2, -1, -1, m00FC(0, 0))
  For l0118% = 0 To 4
   For l011A% = 0 To 4
-   If  m00FC(l0118%, l011A%) > 0# Then
+   If m00FC(l0118%, l011A%) > 0# Then
     l011C% = extfn0C8D(0#, 1, l0118%, l011A%)
-    If  l011C% < 0 Then
+    If l011C% < 0 Then
      l011E = "Comrade, have you checked the budget lately ?"
      l011E = l011E & l0116 & "You do not have enough money in the budget"
      l011E = l011E & l0116 & "to replace a Ruptured Fuel Channel."
@@ -456,7 +349,7 @@ l0116 = Chr(13) & Chr(10)
   Next l011A%
  Next l0118%
  l011C% = extfn0C8D(0#, 1, 0, 0)
-    If  l011C% < 0 Then
+    If l011C% < 0 Then
      l011E = "Comrade, have you checked the budget lately ?"
      l011E = l011E & l0116 & "You do not have enough money in the budget"
      l011E = l011E & l0116 & "to inspect or replace Ruptured Fuel Channels."
@@ -467,13 +360,13 @@ End Sub
 Sub help_it_Click (Index%)
 Dim l0126 As String
 Dim l0128 As Integer
- If  Index > 0 Then
+ If Index > 0 Then
   l0128% = Index - 1
   controlboard.MousePointer = 11
   Call sub07BE
   l0126 = gv0308 & "\slrun.exe " & gv0308 & "\" & gv0314(l0128%)
   gv0114 = extfn0217(l0126, mc0072)
-  If  gv0114 > 32 Then
+  If gv0114 > 32 Then
    gv01A0 = True
    Call sub0919(False)
    Call sub0BC0(1)
@@ -501,18 +394,12 @@ Dim l0144 As Variant
 Dim l0148 As Integer
  l0140 = Chr(13) & Chr(10)
  l0142% = extfn041A(0#, 2)
-   If  l0142% < 0 Then
+   If l0142% < 0 Then
     l0144 = "Comrade, have you checked the budget lately ?"
     l0144 = l0144 & l0140 & "You do not have enough money in the budget"
     l0144 = l0144 & l0140 & "to replace a HEPA Filter at this time."
     l0148% = MsgBox(l0144, 64, "Budget Office Memo")
    End If
-End Sub
-
-Sub sub0E5E ()
-End Sub
-
-Sub sub0E71 ()
 End Sub
 
 Sub major_it_Click ()
@@ -539,13 +426,13 @@ Dim l0196 As Integer
   gv001E = "Chernobyl RBMK Reactor Unit 3"
   gv011C = "chrnob.dll"
   gv0118 = extfn0C01(gv011C)
-  If  gv0118 = 0 Then
+  If gv0118 = 0 Then
    gv0118 = fn092B()
    gv009C = 4
   End If
   Call sub0906
-  If  Command$ <> "" Then
-   If  InStr(1, Command$, "/1") Then
+  If Command$ <> "" Then
+   If InStr(1, Command$, "/1") Then
     gv009C = 1
    ElseIf InStr(1, Command$, "/2") Then
     gv009C = 2
@@ -573,29 +460,29 @@ Dim l0196 As Integer
    Case Else
     l0156 = "chr001.icd"
   End Select
-  If  gv007E Then
+  If gv007E Then
     INFO_DISPLAY.Label1(2).Caption = gv011C
   End If
   Call sub07AC(gv0084)
-  If  InStr(1, UCase$(Command$), "/D") = 0 Then
+  If InStr(1, UCase$(Command$), "/D") = 0 Then
    MainForm.diag_it.Enabled = False
    MainForm.diag_it.Visible = False
   End If
-  If  InStr(1, UCase$(Command$), "/S") = 0 Then
+  If InStr(1, UCase$(Command$), "/S") = 0 Then
    l0154 = gv0034 & "\" & gv005C & "\" & l0156
-   If  gv007E Then
+   If gv007E Then
     INFO_DISPLAY.Label1(3).Caption = l0154
    End If
    l0180% = fn08D2(l0154, 2)
    gv009E = 0
-   If  l0180% = 1 Then
+   If l0180% = 1 Then
     l0184% = extfn0424(3) / 2
-    If  (FileLen(l0154) = l0184% * 4) Then
+    If (FileLen(l0154) = l0184% * 4) Then
      l015A = FreeFile
      Open l0154 For Binary As l015A
      Get l015A, 1, gv00A0(0)
      For l018C% = 1 To l0184%
-     If  EOF(l015A) = False Then
+     If EOF(l015A) = False Then
       Get l015A, , gv00A0(l018C%)
      End If
      Next l018C%
@@ -622,7 +509,7 @@ Dim l0196 As Integer
 Call sub01D0
 Call sub011E
 Call sub0B91
-If  gv009E > 0 Then
+If gv009E > 0 Then
  l0196% = extfn0C14(gv00A0(0), gv009E)
  Call sub01B4(gv032C)
 End If
@@ -674,14 +561,14 @@ Static m01A4 As Integer
 Dim l01A6 As String
 Dim l01A8 As Integer
 m01A4 = gv0080
-If  gv0024 > 0 Then
+If gv0024 > 0 Then
   Cancel = False
 Else
   Call sub0DFC(Cancel, 1)
 End If
-If  Not Cancel Then
- If  gv0024 > 0 Then
-  If  gv0024 > 1 Then
+If Not Cancel Then
+ If gv0024 > 0 Then
+  If gv0024 > 1 Then
    l01A6 = gv0034 & "\" & gv0044
    l01A6 = l01A6 & "\ICSELECT.exe " & Command$
    l01A8 = extfn0217(l01A6, mc0072)
@@ -691,7 +578,7 @@ If  Not Cancel Then
 Else
  Load controlboard
  controlboard.Show (0)
- If  m01A4 > 0 Then
+ If m01A4 > 0 Then
   gv0080 = 1
  End If
 End If
@@ -707,10 +594,6 @@ Sub over_v_it_Click ()
  Call sub079F
 End Sub
 
-Sub sub0F02 ()
- Call sub077D
-End Sub
-
 Sub restore_it_Click ()
  Call sub078B
 End Sub
@@ -722,7 +605,7 @@ Dim l01B8 As Variant
 Dim l01BC As Integer
  l01B4 = Chr(13) & Chr(10)
  l01B6% = extfn03F2(0#, 6)
-   If  l01B6% < 0 Then
+   If l01B6% < 0 Then
     l01B8 = "Comrade, have you checked the budget lately ?"
     l01B8 = l01B8 & l01B4 & "You do not have enough money in the budget"
     l01B8 = l01B8 & l01B4 & " to replace a Condenser Rupture Disk."
@@ -741,7 +624,7 @@ Dim l01C2 As Variant
 Dim l01C6 As Integer
   l01BE = Chr(13) & Chr(10)
   l01C0% = extfn03F2(0#, 7)
-   If  l01C0% < 0 Then
+   If l01C0% < 0 Then
     l01C2 = "Comrade, have you checked the budget lately ?"
     l01C2 = l01C2 & l01BE & "You do not have enough money in the budget"
     l01C2 = l01C2 & l01BE & "to replace a Heat Exchanger."
@@ -758,7 +641,7 @@ Dim l01D0 As Integer
 ' Const mc01DA = 2 ' &H2%
 l01C8 = Chr(13) & Chr(10)
  l01CA% = extfn03F2(0#, 8)
-   If  l01CA% < 0 Then
+   If l01CA% < 0 Then
     l01CC = "Comrade, have you checked the budget lately ?"
     l01CC = l01CC & l01C8 & "You do not have enough money in the budget"
     l01CC = l01CC & l01C8 & "to replace a Heat Exchanger."
@@ -768,7 +651,7 @@ End Sub
 
 Sub select_it_Click ()
 ' Const mc01DA = 2 ' &H2%
- If  Not gv0102 Then
+ If Not gv0102 Then
   Load trend_select
   trend_select.Show (0)
  ElseIf trend_select.WindowState = 1 Then
@@ -776,6 +659,128 @@ Sub select_it_Click ()
   Load trend_select
   trend_select.Show (0)
  End If
+End Sub
+
+Sub sub0CF9 ()
+ Call sub0538
+End Sub
+
+Sub sub0D1E (p00A2 As Integer)
+ Select Case gv00BA
+ Case 0
+  If p00A2 = 1 Then
+   Load REACT_ROD
+   REACT_ROD.Show (0)
+   REACT_ROD.WindowState = 0
+  ElseIf p00A2 = 2 Then
+   Load RX_CONTROL
+   RX_CONTROL.Show (0)
+   RX_CONTROL.WindowState = 0
+  End If
+ Case 1
+  If p00A2 = 1 Then
+   Load bypass_0
+   bypass_0.Show (0)
+   bypass_0.WindowState = 0
+  End If
+ Case 2
+  If p00A2 = 2 Then
+   Load Drain_ctrl
+   Drain_ctrl.Show (0)
+   Drain_ctrl.WindowState = 0
+  ElseIf p00A2 = 3 Then
+   Call sub0743
+  End If
+ Case 4
+ Case 5
+ Case Else
+ End Select
+End Sub
+
+Sub sub0D32 (p00B6 As Integer)
+ Select Case gv00BA
+ Case 0
+ If p00B6 = 0 Then
+  Load maincp1
+  maincp1.Show (0)
+  maincp1.WindowState = 0
+ ElseIf p00B6 = 1 Then
+  Load maincp2
+  maincp2.Show (0)
+  maincp2.WindowState = 0
+ End If
+ Case 1
+  If p00B6 = 0 Then
+   Load turbine_s_ctrl
+   turbine_s_ctrl.Show (0)
+   turbine_s_ctrl.WindowState = 0
+  End If
+ Case 2
+  If p00B6 = 0 Then
+   Load feed_pmp
+   feed_pmp.Show (0)
+   feed_pmp.WindowState = 0
+ End If
+ Case 4
+  If p00B6 = 0 Then
+   Load deaer_L_CTRL
+   deaer_L_CTRL.Show (0)
+   deaer_L_CTRL.WindowState = 0
+ Else
+   Load deaer_P_CTRL
+   deaer_P_CTRL.Show (0)
+   deaer_P_CTRL.WindowState = 0
+ End If
+ Case Else
+ End Select
+End Sub
+
+Sub sub0D69 ()
+ Call sub0544
+End Sub
+
+Sub sub0D7A ()
+Dim l00D0 As String
+Dim l00D2 As Integer
+Dim l00D4 As Variant
+Dim l00D8 As Integer
+ l00D0 = Chr(13) & Chr(10)
+   l00D2% = extfn0264(73, 0)
+   If l00D2% < 0 Then
+    l00D4 = "Comrade, have you checked the budget lately ?"
+    l00D4 = l00D4 & l00D0 & "You do not have enough money in the budget"
+    l00D4 = l00D4 & l00D0 & " to repair the Diesel ECC Pump."
+    l00D8% = MsgBox(l00D4, 64, "Budget Office Memo")
+   End If
+End Sub
+
+Sub sub0DDA ()
+ Call sub0750
+End Sub
+
+Sub sub0DFC (p00E8 As Integer, p00EA As Integer)
+Dim l00EC As Variant
+ If p00EA > 0 Then
+  l00EC = "Do you really want to Terminate the Chernobyl Simulation?"
+ Else
+  l00EC = "Do you really want to close the form?"
+ End If
+ If MsgBox(l00EC, 36, "Application Terminated by User") = 7 Then p00E8 = True
+End Sub
+
+Sub sub0E5E ()
+End Sub
+
+Sub sub0E71 ()
+End Sub
+
+Sub sub0F02 ()
+ Call sub077D
+End Sub
+
+Sub sub0FD5 ()
+' Const mc01DA = 2 ' &H2%
+ Call sub07F1
 End Sub
 
 Sub tile_h_it_Click ()
@@ -806,7 +811,3 @@ Sub turbine_f_it_Click ()
  Call sub07F1
 End Sub
 
-Sub sub0FD5 ()
-' Const mc01DA = 2 ' &H2%
- Call sub07F1
-End Sub

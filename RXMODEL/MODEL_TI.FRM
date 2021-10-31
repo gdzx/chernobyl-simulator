@@ -262,6 +262,18 @@ Dim m00B2(4, 4) As Single
 Dim m00D0(4, 4) As Single
 Dim m00EA(3) As Integer
 
+Function fn11A9 (p013A As Integer) As Integer
+If p013A = 1 Then
+ fn11A9 = 1
+ElseIf p013A = 2 Then
+ fn11A9 = 2
+ElseIf p013A = 3 Then
+ fn11A9 = 5
+Else
+ fn11A9 = 10
+End If
+End Function
+
 Sub Form_Load ()
 Dim l0100 As Long
 Dim l0102 As Long
@@ -300,15 +312,23 @@ Sub m_on_it_Click ()
 End Sub
 
 Sub MCIWnd1_PositionChange (Position As Long)
-     If  model_timer.MCIWnd1.Position = model_timer.MCIWnd1.Length Then
-      If  gv0088 > 0 Then
+     If model_timer.MCIWnd1.Position = model_timer.MCIWnd1.Length Then
+      If gv0088 > 0 Then
         Call sub09BB(gv0088, model_timer)
       Else
-       If  gv0080 = 2 Then
+       If gv0080 = 2 Then
          gv0080 = 1
        End If
       End If
      End If
+End Sub
+
+Sub MSSEL_Click (Index%)
+ If Index = 0 Then
+  Call sub114B
+ Else
+  Call sub1191
+ End If
 End Sub
 
 Sub sub114B ()
@@ -333,26 +353,6 @@ Sub sub1191 ()
  gv0010 = gv0008
 End Sub
 
-Sub MSSEL_Click (Index%)
- If  Index = 0 Then
-  Call sub114B
- Else
-  Call sub1191
- End If
-End Sub
-
-Function fn11A9 (p013A As Integer) As Integer
-If  p013A = 1 Then
- fn11A9 = 1
-ElseIf p013A = 2 Then
- fn11A9 = 2
-ElseIf p013A = 3 Then
- fn11A9 = 5
-Else
- fn11A9 = 10
-End If
-End Function
-
 Sub Timer1_Timer ()
 Static m013C As Integer
 Static m013E As Integer
@@ -362,17 +362,17 @@ Dim l014A As Integer
 Dim l016A As Integer
 Dim l016C As Integer
 Dim l016E As Integer
-If  gv019E Then
+If gv019E Then
  Exit Sub
 End If
-If  gv01A0 Then
-  If  gv0114 > 32 Then
+If gv01A0 Then
+  If gv0114 > 32 Then
    l014A% = extfn084F(gv0114)
-   If  l014A% = 0 Then
+   If l014A% = 0 Then
     gv0114 = 0
    End If
   End If
-  If  gv0114 = 0 Then
+  If gv0114 = 0 Then
    Call sub07AC(gv0084)
    gv01A0 = False
    Call sub0919(True)
@@ -385,14 +385,14 @@ If  gv01A0 Then
   End If
   Exit Sub
 End If
-If  gv01A2 Then
-  If  gv0116 > 32 Then
+If gv01A2 Then
+  If gv0116 > 32 Then
    l014A% = extfn084F(gv0116)
-   If  l014A% = 0 Then
+   If l014A% = 0 Then
     gv0116 = 0
    End If
   End If
-  If  gv0116 = 0 Then
+  If gv0116 = 0 Then
    gv01A2 = False
    MainForm.WindowState = gv002E
    controlboard.MousePointer = 0
@@ -402,8 +402,8 @@ If  gv01A2 Then
   End If
   Exit Sub
 End If
-If  gv01A4 Then
-  If  PLAY_AVI.WindowState = 1 Then
+If gv01A4 Then
+  If PLAY_AVI.WindowState = 1 Then
    gv01A4 = False
    MainForm.WindowState = gv002E
    controlboard.MousePointer = 0
@@ -418,32 +418,32 @@ End If
  gv0022 = gv0022 + 1
  Call extsub0C28(gv0008)
  Call sub075B
- If  gv00D0 Then
+ If gv00D0 Then
    Call sub0B82
-   If  gv0006 <= 5 Then
+   If gv0006 <= 5 Then
     Call sub0B82
    End If
  End If
-If  gv0022 >= gv0006 Then
-  If  gv0090 Then
+If gv0022 >= gv0006 Then
+  If gv0090 Then
    l016A% = extfn1119()
    l016C% = Int(Rnd(l016A% + 111) * 1000#)
    l016E% = extfn110F(gv0092, l016C%)
-   If  l016E% = 1 Then
+   If l016E% = 1 Then
     m0142 = 1 + l016C% - Int(l016C% / 100) * 100
-    If  m0142 <= 100 And m0142 > 0 Then
+    If m0142 <= 100 And m0142 > 0 Then
      l014A% = extfn0264(m0142, 1)
      gv0092 = fn11A9(gv009C)
     End If
    End If
    m013E = m013E + l016E%
    m0140 = m0140 + 1
-   If  MainForm.diag_it.Enabled Then
+   If MainForm.diag_it.Enabled Then
     Label6.Caption = Format(l016C%, "0000") & " - " & Format(m0142, "##0") & " - " & Format(gv0092, "#0")
     Label7.Caption = Format(l016E%, "0") & " - " & Format(m013E / m0140, "##0.0%")
    End If
   Else
-   If  MainForm.diag_it.Enabled Then
+   If MainForm.diag_it.Enabled Then
     Label6.Caption = "Random failures off"
     Label7.Caption = ""
    End If
@@ -456,125 +456,125 @@ If  gv0022 >= gv0006 Then
   Label5.Caption = "System Resources " & Format(extfn10F5(0) / 100, "#00%") & " Free"
   Call extsub1123(1)
   Call extsub112D(1)
-  If  gv000C < gv0008 Then
+  If gv000C < gv0008 Then
    gv000C = gv0008
   End If
-  If  gv000C > .5# Then
-   gv000C = .5#
+  If gv000C > .5 Then
+   gv000C = .5
   End If
   gv0018 = gv0018 + gv000C
   gv001C = gv001C + 1
-  If  gv001C >= 10 Then
+  If gv001C >= 10 Then
    gv001C = 0
    gv0010 = gv0018 / 10#
    gv0018 = 0#
   End If
   gv0014 = gv0010 / gv0008
-  If  gv0014 > 1.5# Then
-   gv0014 = 1.5#
+  If gv0014 > 1.5 Then
+   gv0014 = 1.5
   End If
-  If  gv0014 < 1# Then
+  If gv0014 < 1# Then
    gv0014 = 1#
   End If
   Call extsub1141(gv000C)
   Call extsub1137(m00EA(0))
   gv01AE = "Day- " & Format(m00EA(3), "#0") & "   @ " & Format(m00EA(2), "00") & ":" & Format(m00EA(1), "00") & " hrs"
-  If  model_timer.Caption <> gv01AE Then
+  If model_timer.Caption <> gv01AE Then
     model_timer.Caption = gv01AE
   End If
-  If  gv019C > 0 Then
+  If gv019C > 0 Then
     gv019C = gv019C - 1
   End If
   Call sub04F5
-  If  gv00D2 Then
+  If gv00D2 Then
    Call sub06B3
   End If
-  If  gv00D4 Then
-   If  reactr_0.WindowState <> 1 Then
+  If gv00D4 Then
+   If reactr_0.WindowState <> 1 Then
     Call sub068F
    End If
   End If
-  If  gv00DA Then
+  If gv00DA Then
    Call sub067E
   End If
-  If  gv00DC Then
+  If gv00DC Then
    Call sub06A0
   End If
  Call sub066F
- If  gv00E2 Then
+ If gv00E2 Then
    Call sub06E7
  End If
- If  gv00E4 Then
+ If gv00E4 Then
    Call sub0707
  End If
- If  gv00E6 Then
+ If gv00E6 Then
   Call sub06F6
  End If
- If  gv00EA Then
+ If gv00EA Then
   Call sub063D
  End If
- If  gv00EC Then
+ If gv00EC Then
   Call sub061C
  End If
- If  gv00EE Then
+ If gv00EE Then
   Call sub062D
  End If
- If  gv00F0 Then
+ If gv00F0 Then
   Call sub05F8
  End If
- If  gv00FA Then
+ If gv00FA Then
    Call sub05D4
  End If
- If  gv00F4 Then
+ If gv00F4 Then
    Call sub065C
  End If
- If  gv00FC Then
+ If gv00FC Then
    Call sub05BA
  End If
- If  gv0100 Then
+ If gv0100 Then
   Call sub064F
  End If
- If  gv00FE Then
+ If gv00FE Then
    Call sub05C7
  End If
- If  gv00DE Then
+ If gv00DE Then
    Call sub06C4
  End If
- If  gv00E0 Then
+ If gv00E0 Then
   Call sub060B
  End If
- If  gv00F6 Then
+ If gv00F6 Then
    Call sub0586
  End If
- If  gv00F2 Then
+ If gv00F2 Then
   Call sub05A6
  End If
- If  gv00F8 Then
+ If gv00F8 Then
    Call sub0596
  End If
- If  gv00E8 Then
+ If gv00E8 Then
    Call sub0575
  End If
- If  gv0104 Then
+ If gv0104 Then
    Call sub06D7
  End If
- If  gv0106 Then
+ If gv0106 Then
     Call sub055F
  End If
- If  gv00B8 Then
+ If gv00B8 Then
    Call sub05E4
  End If
-  If  gv00D0 Then
+  If gv00D0 Then
   End If
  Call sub0550
- If  gv0082 Then
+ If gv0082 Then
   Call sub04CE
  End If
  Call sub0508(100)
  gv0022 = 0
  m013C = m013C + 1
  gv01B2 = extfn00E6()
- If  gv0024 > 0 Then
+ If gv0024 > 0 Then
    Unload MainForm
  End If
 End If
@@ -583,3 +583,4 @@ End Sub
 Sub uni_m_or_a_Click (Index%)
  Call sub01B4(Index)
 End Sub
+

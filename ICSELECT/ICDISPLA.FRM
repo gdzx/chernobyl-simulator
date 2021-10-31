@@ -277,7 +277,7 @@ Dim l0044 As Integer
 gv00CC = Index + 1
 l0044% = extfn03A8(gv0006, 1)
 For l0044% = 0 To 3
- If  (l0044% = Index) Then
+ If (l0044% = Index) Then
   Label1(l0044%).ForeColor = QBColor(12)
   Label2(l0044%).Visible = True
   Label2(l0044%).BackStyle = 1
@@ -307,7 +307,7 @@ End Sub
 Sub Command3_Click ()
   Call sub024A(gv0024)
   Unload display_pcx
-  If  gv000A Then
+  If gv000A Then
    Unload INFO_DISPLAY
   End If
 End Sub
@@ -317,7 +317,7 @@ Dim l0082 As Variant
   display_pcx.MousePointer = 11
   l0082 = gv01F4 & "\slrun.exe " & gv01F4 & "\" & "CHER1.LAP"
   gv01FA = extfn0375(l0082, mc002A)
-  If  gv01FA > 32 Then
+  If gv01FA > 32 Then
    gv01F8 = True
    display_pcx.WindowState = 1
    display_pcx.Enabled = False
@@ -335,7 +335,7 @@ Dim l00A0 As Integer
  gv0024 = fn0222()
  display_pcx.Timer1.Interval = 1000
  Call sub020F
-  If  Command$ <> "" Then
+  If Command$ <> "" Then
    gv000A = True
    Load INFO_DISPLAY
    INFO_DISPLAY.Show (0)
@@ -357,7 +357,7 @@ Dim l00A0 As Integer
   l00A0% = extfn03A8(gv0006, 1)
   gv00CC = 1
   For l00A0% = 0 To 3
-   If  (l00A0% = gv00CC - 1) Then
+   If (l00A0% = gv00CC - 1) Then
     Label1(l00A0%).ForeColor = QBColor(12)
     Label2(l00A0%).Visible = True
     Label2(l00A0%).BackStyle = 1
@@ -374,7 +374,7 @@ Dim l00A4 As Integer
 gv00CC = Index + 1
 l00A4% = extfn03A8(gv0006, 1)
 For l00A4% = 0 To 3
- If  (l00A4% = Index) Then
+ If (l00A4% = Index) Then
   Label1(l00A4%).ForeColor = QBColor(12)
   Label2(l00A4%).Visible = True
   Label2(l00A4%).BackStyle = 1
@@ -388,14 +388,14 @@ End Sub
 
 Sub Timer1_Timer ()
 Dim l00A8 As Integer
- If  gv01F8 Then
-  If  gv01FA > 32 Then
+ If gv01F8 Then
+  If gv01FA > 32 Then
    l00A8% = extfn0172(gv01FA)
-   If  l00A8% = 0 Then
+   If l00A8% = 0 Then
     gv01FA = 0
    End If
   End If
-  If  gv01FA = 0 Then
+  If gv01FA = 0 Then
    gv01F8 = False
    Call sub0334(0)
    display_pcx.WindowState = 0
@@ -404,3 +404,4 @@ Dim l00A8 As Integer
   End If
  End If
 End Sub
+

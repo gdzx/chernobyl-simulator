@@ -124,15 +124,15 @@ Sub Command1_Click ()
 Dim l003E As String
 Dim l0040 As Single
 Dim l004E As Integer
-  If  MCIWnd1.Filename = "" Then
+  If MCIWnd1.Filename = "" Then
     timer_intro.Interval = 250
     Exit Sub
   End If
  Select Case m0038
  Case 0:
   l0040 = CSng(MCIWnd1.Length)
-  l004E% = Fix(l0040 * .96#)
-  If  MCIWnd1.Position < l004E% Then
+  l004E% = Fix(l0040 * .96)
+  If MCIWnd1.Position < l004E% Then
    l003E = "play from " & Str$(l004E%)
    MCIWnd1.Command = l003E
   End If
@@ -149,7 +149,7 @@ Dim l004E As Integer
 End Sub
 
 Sub Command2_Click ()
- If  m0038 = 0 Then
+ If m0038 = 0 Then
   MCIWnd1.Command = "pause"
   MCIWnd1.Filename = m003A
  End If
@@ -158,7 +158,7 @@ Sub Command2_Click ()
 End Sub
 
 Sub Command3_Click ()
-If  Command3.Caption = "Pause" Then
+If Command3.Caption = "Pause" Then
  MCIWnd1.Command = "pause"
  Command3.Caption = "Play"
 Else
@@ -189,7 +189,7 @@ Dim l0084 As Variant
  m0030 = Picture1.Width - m0034 * 2# - Picture2.Width
  Picture2.Left = fn00FF(m0034, m0030, gv00C4)
  gv00C8 = 1
-  If  Command$ <> "" Then
+  If Command$ <> "" Then
    Load INFO_DISPLAY
    INFO_DISPLAY.Show (0)
    INFO_DISPLAY.Label1(0).Caption = "COMMAND LINE " & Command$
@@ -211,18 +211,18 @@ Dim l00A4 As Long
 Dim l00A6 As Long
 Dim l00A8 As Integer
  l00A2 = MCIWnd1.Length
-  If  m0038 = 1 And Position > l00A2 * .99# Then
+  If m0038 = 1 And Position > l00A2 * .99 Then
    gv00C4 = 600
    Picture2.Left = fn00FF(40#, 1050#, gv00C4)
   l00A4& = CLng(CSng(gv00C4) * 65#)
   l00A6& = extfn02EF(l00A4&)
   l00A8% = extfn02B7(0, l00A6&)
   End If
- If  Position = l00A2 Then
+ If Position = l00A2 Then
   Command1.Enabled = False
   Command2.Enabled = False
   Command3.Enabled = False
-  If  m0038 = 0 Then
+  If m0038 = 0 Then
    timer_intro.Interval = 2000
   ElseIf m0038 = 1 Then
    timer_intro.Interval = 500
@@ -256,7 +256,7 @@ Dim l00DE As Integer
 Dim l00E0 As Long
 Dim l00E2 As Long
 Dim l00E4 As Integer
- If  Button = 1 Then
+ If Button = 1 Then
   l00DC = X - m002C + Picture2.Left
   l00DE = fn00ED(40#, 1050#, l00DC)
   Picture2.Left = l00DE
@@ -279,7 +279,7 @@ Dim l00F2 As Integer
  Case 0:
   m003A = gv00A4 & "\" & gv00BC & "\" & "intro02.avi"
   MCIWnd1.Filename = m003A
-  If  gv00A2 Then
+  If gv00A2 Then
    INFO_DISPLAY.Label1(1).Caption = m003A
   End If
   l00E8 = Shape1.Top + (Shape1.Height - MCIWnd1.Height) / 3
@@ -291,7 +291,7 @@ Dim l00F2 As Integer
   Command2.Enabled = True
   Command3.Enabled = True
   m0038 = m0038 + 1
-  If  gv00A2 Then
+  If gv00A2 Then
    INFO_DISPLAY.Label1(5).Caption = "AVI # " & Str$(m0038)
   End If
   timer_intro.Interval = 0
@@ -304,3 +304,4 @@ Dim l00F2 As Integer
  Case Else
  End Select
 End Sub
+

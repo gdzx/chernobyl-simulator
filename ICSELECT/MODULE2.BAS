@@ -12,10 +12,10 @@ End Function
 Function fn00ED (p0020 As Single, p0022 As Single, p0024 As Single) As Integer
 Dim l0026 As Integer
  l0026 = Int(p0024)
- If  p0024 < p0020 Then
+ If p0024 < p0020 Then
   l0026 = Int(p0020)
  End If
- If  p0024 > p0022 Then
+ If p0024 > p0022 Then
   l0026 = Int(p0022)
  End If
  fn00ED = l0026
@@ -35,11 +35,11 @@ Dim l0042 As Variant
  Case gv00CA
    gv00CA = 0
  End Select
- If  gv00CA = 0 Then
+ If gv00CA = 0 Then
   l003A = "ALRMHORN.WAV"
   l0042 = gv000C & "\" & gv00BC & "\" & l003A
-  p0036.MCIWnd1.FileName = l0042
-  If  gv00C4 > 0 Then
+  p0036.MCIWnd1.Filename = l0042
+  If gv00C4 > 0 Then
    gv00C4 = 1
   End If
  End If
@@ -52,9 +52,10 @@ Select Case p0048
 Case 1 To 9
       l0050 = "EQ_START.WAV"
       l004E = gv000C & "\" & gv00BC & "\" & l0050
-      p004C.MCIWnd1.FileName = l004E
+      p004C.MCIWnd1.Filename = l004E
       gv00CA = 1
 Case Else
 End Select
 p004C.MCIWnd1.Command = "PLAY FROM 0"
 End Sub
+

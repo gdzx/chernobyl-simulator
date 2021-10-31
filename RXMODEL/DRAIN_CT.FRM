@@ -219,11 +219,11 @@ Dim l0024 As Integer
 Dim l0028 As Integer
 l0020% = 8 + Index
 Call extsub1528(0#, l0020%)
-If  Index = 1 Then
+If Index = 1 Then
  gv008C = 0
  For l0024% = 56 To 58
   l0028% = fn0528(l0024%, Me)
-  If  l0028% > 0 Then
+  If l0028% > 0 Then
    Exit For
   End If
  Next l0024%
@@ -240,12 +240,12 @@ End Sub
 
 Sub Spin1_SpinDown (Index%)
  DoEvents
- Call extsub1528(-.005#, 11)
+ Call extsub1528(-.005, 11)
 End Sub
 
 Sub Spin1_SpinUp (Index%)
  DoEvents
- Call extsub1528(.005#, 11)
+ Call extsub1528(.005, 11)
 End Sub
 
 Sub Text1_GotFocus ()
@@ -256,8 +256,8 @@ End Sub
 Sub Text1_KeyDown (KeyCode As Integer, Shift As Integer)
 Dim l003A As Single
 Static m003C As Integer
-If  m003C = 0 Then
- If  KeyCode <> 46 Then
+If m003C = 0 Then
+ If KeyCode <> 46 Then
   Text1.Text = ""
   m003C = 1
  Else
@@ -265,11 +265,11 @@ If  m003C = 0 Then
  End If
 End If
 gv010A = True
-If  KeyCode = 13 Then
+If KeyCode = 13 Then
   gv019C = 0
   m003C = 0
   gv010A = False
-  If  Text1.Text = "" Then
+  If Text1.Text = "" Then
    l003A = extfn03AC(13)
   Else
    l003A = fn0144(Val(Text1.Text))
@@ -282,3 +282,4 @@ End Sub
 Sub Text1_LostFocus ()
  gv0110 = False
 End Sub
+

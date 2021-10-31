@@ -2103,12 +2103,12 @@ Sub Image2_DragDrop (Index%, Source As Control, X As Single, Y As Single)
 Dim l0054 As Integer
 Dim l0056 As Integer
 Dim l005A As Integer
-If  gv00BC Then
+If gv00BC Then
     l0054% = (gv00BE Mod 5)
     l0056% = Int(gv00BE / 5)
     Call extsub1740(5, l0054%, l0056%)
 End If
-If  gv00C0 Then
+If gv00C0 Then
    l005A% = extfn041A(1#, 6)
     l0054% = (gv00C2 Mod 5)
     l0056% = Int(gv00C2 / 5)
@@ -2122,7 +2122,7 @@ End If
 End Sub
 
 Sub Image2_DragOver (Index%, Source As Control, X As Single, Y As Single, State As Integer)
- If  gv00BC Then
+ If gv00BC Then
     gv00BE = Index
  ElseIf gv00C4 Then
   gv00C6 = Index
@@ -2135,7 +2135,7 @@ End Sub
 Sub Image3_DragDrop (Source As Control, X As Single, Y As Single)
 Dim l0074 As Integer
 Dim l0076 As Integer
-If  gv00C0 Then
+If gv00C0 Then
     l0074% = (gv00C2 Mod 5)
     l0076% = Int(gv00C2 / 5)
     Call extsub1740(-5, l0074%, l0076%)
@@ -2155,10 +2155,10 @@ Sub Label10_DragDrop (Source As Control, X As Single, Y As Single)
 Dim l008A As Integer
 Dim l008C As Integer
 Dim l008E As Integer
-If  gv00BC Then
+If gv00BC Then
  l008A% = extfn041A(1#, 5)
 End If
-If  gv00C0 Then
+If gv00C0 Then
     l008C% = (gv00C2 Mod 5)
     l008E% = Int(gv00C2 / 5)
     Call extsub1740(-5, l008C%, l008E%)
@@ -2174,7 +2174,7 @@ Dim l0094 As Integer
    l0092! = 1# + CSng(Index) * 1#
    Call extsub02DA(l0092!, 0, 0, 3)
    For l0094% = 0 To 2
-    If  Index = l0094% Then
+    If Index = l0094% Then
      REACT_ROD.Label7(l0094%).Caption = "X"
     Else
      REACT_ROD.Label7(l0094%).Caption = ""
@@ -2186,11 +2186,11 @@ Sub Picture2_DragDrop (Source As Control, X As Single, Y As Single)
 Dim l00A2 As Integer
 Dim l00A4 As Integer
 Dim l00A6 As Integer
-If  gv00BC Then
+If gv00BC Then
  l00A2% = extfn041A(1#, 5)
  Call extsub1740(1, -1, -1)
 End If
-If  gv00C0 Then
+If gv00C0 Then
    l00A2% = extfn041A(1#, 6)
     l00A4% = (gv00C2 Mod 5)
     l00A6% = Int(gv00C2 / 5)
@@ -2204,7 +2204,7 @@ End Sub
 
 Sub Spin1_DragDrop (Index%, Source As Control, X As Single, Y As Single)
 Dim l00B2 As Integer
-If  gv00BC Then
+If gv00BC Then
  l00B2% = extfn041A(1#, 5)
  Call extsub1740(1, -1, -1)
 End If
@@ -2217,7 +2217,7 @@ Dim l00B8 As Integer
   DoEvents
   l00B6% = (Index Mod 5)
   l00B8% = Int(Index / 5)
-  Call extsub02DA(.01#, l00B6%, l00B8%, 2)
+  Call extsub02DA(.01, l00B6%, l00B8%, 2)
 End Sub
 
 Sub Spin1_SpinUp (Index%)
@@ -2226,5 +2226,6 @@ Dim l00BE As Integer
   DoEvents
   l00BC% = (Index Mod 5)
   l00BE% = Int(Index / 5)
-  Call extsub02DA(-.01#, l00BC%, l00BE%, 2)
+  Call extsub02DA(-.01, l00BC%, l00BE%, 2)
 End Sub
+

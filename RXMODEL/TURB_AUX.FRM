@@ -379,3 +379,4 @@ Dim l0046 As Single
  Image5(Index) = Image1(3)
  Image5(1 - Index) = Image1(0)
 End Sub
+

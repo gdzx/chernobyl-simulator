@@ -586,12 +586,13 @@ Sub Spin1_SpinDown (Index%)
 Dim l0086 As Integer
  DoEvents
  l0086% = Index + 12
- Call extsub1528(-.05#, l0086%)
+ Call extsub1528(-.05, l0086%)
 End Sub
 
 Sub Spin1_SpinUp (Index%)
 Dim l008A As Integer
  DoEvents
  l008A% = Index + 12
- Call extsub1528(.05#, l008A%)
+ Call extsub1528(.05, l008A%)
 End Sub
+

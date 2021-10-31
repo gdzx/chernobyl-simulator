@@ -473,12 +473,12 @@ End Sub
 
 Sub Command2_Click ()
   gv0082 = Not gv0082
-  If  Not gv0082 Then
-   If  gv0080 = 2 Then
+  If Not gv0082 Then
+   If gv0080 = 2 Then
     gv0080 = 1
    End If
   Else
-    If  (gv0088 = 0) Then
+    If (gv0088 = 0) Then
      model_timer.MCIWnd1.Command = "STOP"
      model_timer.MCIWnd1.Command = "SEEK TO 0"
      gv008A = 1
@@ -507,9 +507,6 @@ Sub Form_Unload (Cancel As Integer)
  gv00CC = False
 End Sub
 
-Sub sub1255 ()
-End Sub
-
 Sub Picture2_MouseDown (Button As Integer, Shift As Integer, X As Single, Y As Single)
 Dim l0060 As Integer
 Dim l0062 As Single
@@ -528,7 +525,7 @@ End Sub
 Sub Picture3_MouseMove (Button As Integer, Shift As Integer, X As Single, Y As Single)
 Dim l0076 As Integer
 Dim l0078 As Single
- If  Button = 1 Then
+ If Button = 1 Then
   l0078! = Y - m001A + Picture3.Top
   l0076 = fn099B(m0022, m001E, l0078!)
   Picture3.Top = l0076
@@ -536,3 +533,7 @@ Dim l0078 As Single
  End If
  Call sub07AC(gv0084)
 End Sub
+
+Sub sub1255 ()
+End Sub
+

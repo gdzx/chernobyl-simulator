@@ -1113,12 +1113,12 @@ Dim l0028 As Integer
 Dim l002C As Integer
   l0022% = Int(Index / 2)
   l0024% = l0022% + 6
-  If  Index Mod 2 = 1 Then
-     If  (extfn03DE(l0022%, 0) > .99# And extfn03DE(l0022%, 1) < .01#) Then
+  If Index Mod 2 = 1 Then
+     If (extfn03DE(l0022%, 0) > .99 And extfn03DE(l0022%, 1) < .01) Then
       gv008C = 0
       l0028% = l0022% + 4
       l002C% = fn0528(l0028%, Me)
-      If  extfn03AC(l0022% + 3) <> 1 And l002C% = 0 Then
+      If extfn03AC(l0022% + 3) <> 1 And l002C% = 0 Then
         Call sub09C9(1, model_timer)
       End If
       Call extsub0348(l0024%, 1)
@@ -1148,11 +1148,11 @@ Sub Command4_Click (Index%)
 Dim l0040 As Integer
 Dim l0042 As Integer
 Call extsub1528(0#, Index%)
-If  Index = 1 Then
+If Index = 1 Then
  gv008C = 0
  For l0040% = 62 To 64
   l0042% = fn0528(l0040%, Me)
-  If  l0042% > 0 Then
+  If l0042% > 0 Then
    Exit For
   End If
  Next l0040%
@@ -1182,12 +1182,12 @@ End Sub
 
 Sub Spin1_SpinDown ()
   DoEvents
-  Call extsub1528(-.005#, 2)
+  Call extsub1528(-.005, 2)
 End Sub
 
 Sub Spin1_SpinUp ()
   DoEvents
-  Call extsub1528(.005#, 2)
+  Call extsub1528(.005, 2)
 End Sub
 
 Sub Text1_GotFocus ()
@@ -1198,8 +1198,8 @@ End Sub
 Sub Text1_KeyDown (KeyCode As Integer, Shift As Integer)
 Dim l0056 As Single
 Static m0058 As Integer
-If  m0058 = 0 Then
- If  KeyCode <> 46 Then
+If m0058 = 0 Then
+ If KeyCode <> 46 Then
   Text1.Text = ""
   m0058 = 1
  Else
@@ -1207,11 +1207,11 @@ If  m0058 = 0 Then
  End If
 End If
 gv0108 = True
-If  KeyCode = 13 Then
+If KeyCode = 13 Then
   gv019C = 0
   m0058 = 0
   gv0108 = False
-  If  Text1.Text = "" Then
+  If Text1.Text = "" Then
    l0056 = extfn03AC(7)
   Else
    l0056 = fn0144(Val(Text1.Text))
@@ -1224,3 +1224,4 @@ End Sub
 Sub Text1_LostFocus ()
  gv010E = False
 End Sub
+

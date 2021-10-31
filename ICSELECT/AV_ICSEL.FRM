@@ -136,7 +136,7 @@ Dim l005E As Integer
   Screen.MousePointer = 11
   gv00C8 = 600
   Picture2.Left = fn00FF(40#, 1050#, gv00C8)
-  If  MCIWnd1.Filename = "" Then
+  If MCIWnd1.Filename = "" Then
     timer_iCS.Interval = 250
   Else
     l003E = CSng(avi_ics.MCIWnd1.Length)
@@ -153,7 +153,7 @@ Sub Command2_Click ()
 End Sub
 
 Sub Command3_Click ()
- If  Command3.Caption = "Pause" Then
+ If Command3.Caption = "Pause" Then
   avi_ics.MCIWnd1.Command = "pause"
   Command3.Caption = "Play"
  Else
@@ -203,7 +203,7 @@ Dim l0094 As Variant
   l006C = gv00A8 & "\" & gv00C0 & "\"
   l0072 = l006C & l0070
   avi_ics.MCIWnd1.Filename = l0072
-  If  gv000A Then
+  If gv000A Then
    INFO_DISPLAY.Label1(3).Caption = l0072
   End If
   l0090 = Shape1.Top + (Shape1.Height - avi_ics.MCIWnd1.Height) / 3
@@ -226,10 +226,10 @@ End Sub
 Sub MCIWnd1_PositionChange (Position As Long)
 Dim l00A2 As Single
  l00A2 = avi_ics.MCIWnd1.Length
- If  gv000A Then
+ If gv000A Then
   INFO_DISPLAY.Label1(2).Caption = "AVI # " & Str$(gv00CC)
  End If
- If  Position = l00A2 Then
+ If Position = l00A2 Then
   Command1.Enabled = False
   Command2.Enabled = False
   Command3.Enabled = False
@@ -265,7 +265,7 @@ Dim l00DE As Integer
 Dim l00E0 As Long
 Dim l00E2 As Long
 Dim l00E4 As Integer
- If  Button = 1 Then
+ If Button = 1 Then
   l00DC = X - m0030 + Picture2.Left
   l00DE = fn00ED(40#, 1050#, l00DC)
   Picture2.Left = l00DE
@@ -283,10 +283,11 @@ Dim l00E8 As Integer
   timer_iCS.Interval = 0
   Unload avi_ics
   Unload display_pcx
-  If  gv000A Then
+  If gv000A Then
    Unload INFO_DISPLAY
   End If
   l00E6 = gv000C & "\" & gv001C
   l00E6 = l00E6 & "\rxmodel.exe " & Command$
   l00E8 = extfn0375(l00E6, mc0028)
 End Sub
+

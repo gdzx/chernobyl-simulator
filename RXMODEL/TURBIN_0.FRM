@@ -389,16 +389,8 @@ Sub arrange_it_Click ()
  MainForm.Arrange mc001E
 End Sub
 
-Sub sub1016 ()
- Call sub04E8
-End Sub
-
 Sub cascade_it_Click ()
  MainForm.Arrange m0020
-End Sub
-
-Sub sub0CF9 ()
- Call sub0538
 End Sub
 
 Sub Command6_Click (p0022 As Integer)
@@ -409,14 +401,6 @@ Dim l0024 As Single
  Call extsub0C47(l0024!, 8)
 End Sub
 
-Sub sub0D69 ()
- Call sub0544
-End Sub
-
-Sub sub0DDA ()
- Call sub0750
-End Sub
-
 Sub Form_Load ()
  gv00E2 = True
 End Sub
@@ -425,16 +409,38 @@ Sub Form_Unload (Cancel As Integer)
  gv00E2 = False
 End Sub
 
-Sub sub0F02 ()
- Call sub077D
-End Sub
-
 Sub restore_it_Click ()
  sub078B
 End Sub
 
 Sub save_it_Click ()
  Call sub0795
+End Sub
+
+Sub sub0CF9 ()
+ Call sub0538
+End Sub
+
+Sub sub0D69 ()
+ Call sub0544
+End Sub
+
+Sub sub0DDA ()
+ Call sub0750
+End Sub
+
+Sub sub0F02 ()
+ Call sub077D
+End Sub
+
+Sub sub0FD5 ()
+ Load turbine_0
+ turbine_0.Show (0)
+ turbine_0.WindowState = 0
+End Sub
+
+Sub sub1016 ()
+ Call sub04E8
 End Sub
 
 Sub tile_h_it_Click ()
@@ -449,8 +455,3 @@ Sub trend_it_Click ()
  Call sub07D2
 End Sub
 
-Sub sub0FD5 ()
- Load turbine_0
- turbine_0.Show (0)
- turbine_0.WindowState = 0
-End Sub

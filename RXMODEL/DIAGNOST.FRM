@@ -471,12 +471,12 @@ Sub Spin1_SpinDown (Index%)
  Select Case Index
 Case 0:
  m0028 = m0028 - 1
- If  m0028 < 0 Then
+ If m0028 < 0 Then
   m0028 = 4
  End If
 Case 1:
  m002A = m002A - 1
- If  m002A < 0 Then
+ If m002A < 0 Then
   m002A = 4
  End If
 End Select
@@ -489,12 +489,12 @@ Sub Spin1_SpinUp (Index%)
  Select Case Index
 Case 0:
  m0028 = m0028 + 1
- If  m0028 > 4 Then
+ If m0028 > 4 Then
   m0028 = 0
  End If
 Case 1:
  m002A = m002A + 1
- If  m002A > 4 Then
+ If m002A > 4 Then
   m002A = 0
  End If
 End Select
@@ -505,7 +505,7 @@ End Sub
 Sub Spin2_SpinDown (Index%)
  DoEvents
  m002C = m002C - 1 - Index * 9
- If  m002C < 1 Then
+ If m002C < 1 Then
   m002C = 100
  End If
  Label13.Caption = Format(m002C, "###")
@@ -514,7 +514,7 @@ End Sub
 Sub Spin2_SpinUp (Index%)
  DoEvents
  m002C = m002C + 1 + Index * 9
- If  m002C > 100 Then
+ If m002C > 100 Then
   m002C = 1
  End If
  Label13.Caption = Format(m002C, "###")
@@ -524,7 +524,7 @@ Sub Spin3_SpinDown (Index%)
 Dim l006E As Integer
  DoEvents
  m002E = m002E - 1 - Index * 9
- If  m002E < 0 Then
+ If m002E < 0 Then
   m002E = 99
  End If
  l006E% = extfn026E(m002E + 1, 0)
@@ -535,9 +535,10 @@ Sub Spin3_SpinUp (Index%)
 Dim l0072 As Integer
  DoEvents
  m002E = m002E + 1 + Index * 9
- If  m002E > 99 Then
+ If m002E > 99 Then
   m002E = 0
  End If
  l0072% = extfn026E(m002E + 1, 0)
  Label15.Caption = Format(m002E + 1, "##0") & " - " & Format(l0072%, "0")
 End Sub
+

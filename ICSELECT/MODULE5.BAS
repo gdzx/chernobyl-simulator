@@ -3,8 +3,8 @@ Option Explicit
 Declare Function extfn02C1 Lib "User" Alias "setfocus" (ByVal p1%) As Integer
 Declare Sub extsub02B1 Lib "User" Alias "SetWindowPos" (ByVal p1%, ByVal p2%, ByVal p3%, ByVal p4%, ByVal p5%, ByVal p6%, ByVal p7%)
 Const mc000C = 3 ' &H3%
-Const mc000E =-1 ' &HFFFF%
-Const mc0010 =-2 ' &HFFFE%
+Const mc000E = -1' &HFFFF%
+Const mc0010 = -2' &HFFFE%
 Const mc0012 = 1 ' &H1%
 Dim m0014 As Integer
 
@@ -17,7 +17,7 @@ Sub sub02E2 (p001C As Form)
 End Sub
 
 Sub sub02F1 (p0020 As Form, p0022 As Integer)
-If  p0022 = 0 Then
+If p0022 = 0 Then
  Call extsub02B1(p0020.hWnd, mc0010, 0&, 0&, 0&, 0&, mc000C)
 Else
  Call extsub02B1(p0020.hWnd, mc000E, 0&, 0&, 0&, 0&, mc000C)
@@ -28,3 +28,4 @@ Sub sub0302 (p0026 As Form)
 Dim l0028 As Integer
   l0028% = extfn02C1(p0026.hWnd)
 End Sub
+

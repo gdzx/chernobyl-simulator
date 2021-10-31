@@ -147,7 +147,7 @@ End Sub
 Sub Form_Unload (Cancel As Integer)
 Dim l0024 As Integer
 Dim l0026 As Integer
-  If  gv0334 <> 0 Then
+  If gv0334 <> 0 Then
    l0024% = gv0334
    For l0026% = l0024% To 9
     Call sub0B82
@@ -159,7 +159,7 @@ Dim l0026 As Integer
 End Sub
 
 Sub Picture1_DblClick ()
- If  Not gv0102 Then
+ If Not gv0102 Then
   Load trend_select
   trend_select.Show (0)
  ElseIf trend_select.WindowState = 1 Then
@@ -169,3 +169,4 @@ Sub Picture1_DblClick ()
  End If
  trend_select.Left = TRENDSv.Width
 End Sub
+

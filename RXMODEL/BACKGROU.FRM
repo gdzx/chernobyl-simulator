@@ -242,7 +242,7 @@ Sub click1_DblClick (Index%)
 End Sub
 
 Sub click1_DragDrop (Index%, Source As Control, X As Single, Y As Single)
- If  gv00B6 And click1(Index).Tag <> "" Then
+ If gv00B6 And click1(Index).Tag <> "" Then
   Load show_help
   show_help.Show (0)
   show_help.Top = Picture1.Top + controlboard.Top + click1(Index).Top + Int(Y)
@@ -252,10 +252,10 @@ Sub click1_DragDrop (Index%, Source As Control, X As Single, Y As Single)
   show_help.Height = show_help.Label1.Height + 100
   show_help.Label1.Top = 30
   show_help.Label1.Left = 30
-  If  show_help.Left + show_help.Width > MainForm.Width Then
+  If show_help.Left + show_help.Width > MainForm.Width Then
    show_help.Left = show_help.Left - show_help.Width
   End If
-  If  show_help.Top + show_help.Height > controlboard.Height Then
+  If show_help.Top + show_help.Height > controlboard.Height Then
    show_help.Top = show_help.Top - show_help.Height
   End If
  Else
@@ -271,7 +271,7 @@ End Sub
 Sub click1_MouseDown (Index%, Button As Integer, Shift As Integer, X As Single, Y As Single)
 Unload show_help
 gv00B6 = False
-If  Button = 1 Then
+If Button = 1 Then
   controlboard.MousePointer = 11
   Select Case Index
    Case 0:
@@ -392,7 +392,7 @@ Sub Picture1_DragOver (Source As Control, X As Single, Y As Single, State As Int
 End Sub
 
 Sub Picture1_MouseDown (Button As Integer, Shift As Integer, X As Single, Y As Single)
- If  Button = 2 Then
+ If Button = 2 Then
   Call sub0A34(controlboard)
  ElseIf Button = 1 Then
   Call sub0A46(controlboard)
@@ -402,3 +402,4 @@ End Sub
 Sub Picture1_MouseMove (Button As Integer, Shift As Integer, X As Single, Y As Single)
  controlboard.Label1.Visible = False
 End Sub
+

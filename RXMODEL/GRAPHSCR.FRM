@@ -370,7 +370,7 @@ Dim l0026 As Integer
 Dim l002C As Integer
  l0026% = Index + 1
  Call extsub188F(l0026%, 0)
- If  trend_select.List1.ListIndex >= 0 Then
+ If trend_select.List1.ListIndex >= 0 Then
   l002C% = trend_select.List1.ListIndex + 1
   Call extsub1899(l0026%, l002C%)
  End If
@@ -393,13 +393,6 @@ Sub Form_Unload (Cancel As Integer)
  gv0102 = False
 End Sub
 
-Sub sub18A3 ()
- If  List1.Visible Then
-  List1.Visible = Not List1.Visible
-  List1.ListIndex = -1
- End If
-End Sub
-
 Sub Spin1_SpinDown (Index%)
 Dim l0046 As Integer
  DoEvents
@@ -414,11 +407,33 @@ Dim l004A As Integer
  Call extsub188F(l004A%, 1)
 End Sub
 
+Sub sub18A3 ()
+ If List1.Visible Then
+  List1.Visible = Not List1.Visible
+  List1.ListIndex = -1
+ End If
+End Sub
+
+Sub sub18C5 ()
+Dim l0054 As String * 25
+Dim l0056 As Integer
+ List1.Visible = Not List1.Visible
+ If Not List1.Visible Then
+  List1.ListIndex = -1
+ ElseIf Not m0022 Then
+  For l0056% = 1 To 30
+   Call extsub00D2(l0056%, ByVal l0054)
+   List1.AddItem l0054
+  Next l0056%
+  m0022 = True
+ End If
+End Sub
+
 Sub TRENDS_Click ()
 Dim l004E As String * 25
 Dim l0050 As Integer
  List1.Visible = Not List1.Visible
- If  Not List1.Visible Then
+ If Not List1.Visible Then
   List1.ListIndex = -1
  ElseIf Not m0022 Then
   For l0050% = 1 To 30
@@ -429,17 +444,3 @@ Dim l0050 As Integer
  End If
 End Sub
 
-Sub sub18C5 ()
-Dim l0054 As String * 25
-Dim l0056 As Integer
- List1.Visible = Not List1.Visible
- If  Not List1.Visible Then
-  List1.ListIndex = -1
- ElseIf Not m0022 Then
-  For l0056% = 1 To 30
-   Call extsub00D2(l0056%, ByVal l0054)
-   List1.AddItem l0054
-  Next l0056%
-  m0022 = True
- End If
-End Sub

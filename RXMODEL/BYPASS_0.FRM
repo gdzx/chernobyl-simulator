@@ -170,16 +170,8 @@ Sub arrange_it_Click ()
  MainForm.Arrange mc001E
 End Sub
 
-Sub sub1016 ()
- Call sub04E8
-End Sub
-
 Sub cascade_it_Click ()
  MainForm.Arrange m0020
-End Sub
-
-Sub sub0CF9 ()
- Call sub0538
 End Sub
 
 Sub Command1_Click (Index%)
@@ -190,20 +182,15 @@ Dim l002C As Integer
 ' Const mc0034 = 2 ' &H2%
 l0024% = Index
 Call extsub13A9(0#, l0024%)
-If  Index = 1 Then
+If Index = 1 Then
  gv008C = 0
  For l0028% = 68 To 70
   l002C% = fn0528(l0028%, Me)
-  If  l002C% > 0 Then
+  If l002C% > 0 Then
    Exit For
   End If
  Next l0028%
 End If
-End Sub
-
-Sub sub0D69 ()
-' Const mc0034 = 2 ' &H2%
- Call sub0544
 End Sub
 
 Sub Form_Load ()
@@ -214,11 +201,6 @@ End Sub
 Sub Form_Unload (Cancel As Integer)
 ' Const mc0034 = 2 ' &H2%
  gv00E8 = False
-End Sub
-
-Sub sub0F02 ()
-' Const mc0034 = 2 ' &H2%
- Call sub077D
 End Sub
 
 Sub restore_it_Click ()
@@ -246,13 +228,36 @@ End Sub
 Sub Spin2_SpinDown ()
 ' Const mc0034 = 2 ' &H2%
  DoEvents
- Call extsub13A9(-.005#, 2)
+ Call extsub13A9(-.005, 2)
 End Sub
 
 Sub Spin2_SpinUp ()
 ' Const mc0034 = 2 ' &H2%
  DoEvents
- Call extsub13A9(.005#, 2)
+ Call extsub13A9(.005, 2)
+End Sub
+
+Sub sub0CF9 ()
+ Call sub0538
+End Sub
+
+Sub sub0D69 ()
+' Const mc0034 = 2 ' &H2%
+ Call sub0544
+End Sub
+
+Sub sub0F02 ()
+' Const mc0034 = 2 ' &H2%
+ Call sub077D
+End Sub
+
+Sub sub0FD5 ()
+' Const mc0034 = 2 ' &H2%
+ Call sub07F1
+End Sub
+
+Sub sub1016 ()
+ Call sub04E8
 End Sub
 
 Sub tile_h_it_Click ()
@@ -270,7 +275,3 @@ Sub trend_it_Click ()
  Call sub07D2
 End Sub
 
-Sub sub0FD5 ()
-' Const mc0034 = 2 ' &H2%
- Call sub07F1
-End Sub

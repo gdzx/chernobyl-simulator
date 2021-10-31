@@ -12,10 +12,84 @@ Declare Sub extsub0B3F Lib "chrnob.dll" Alias "setack" ()
 Declare Sub extsub0B04 Lib "chrnob.dll" Alias "SETPLT" ()
 Dim m0016 As Integer
 
+Sub sub01C1 (p00DC As Integer, p00DE As Integer)
+Dim l00E2 As String * 25
+Dim l00E6 As String * 20
+Dim l00E8 As String
+Dim l00EC As Variant
+Dim l00F0 As Integer
+Dim l00F2 As Long
+Dim l00F4 As Long
+Dim l00FA As Integer
+  If (Not gv0102) Then
+   Exit Sub
+  End If
+  l00E8 = Chr(13) & Chr(10)
+  For l00EC = p00DC% To p00DE%
+   l00F0% = l00EC + 1
+   l00F2& = extfn00B4(l00F0%)
+   l00F4& = extfn00C8(l00F2&)
+   trend_select.Label1(l00EC).ForeColor = l00F4&
+   trend_select.Spin1(l00EC).BackColor = l00F4&
+   l00FA% = extfn00BE(l00F0%)
+    If l00FA% = 0 Then
+     l00E2 = ""
+     l00E6 = ""
+    ElseIf l00FA% > 0 Then
+     Call extsub00D2(l00FA%, ByVal l00E2)
+     Call extsub00DC(l00FA%, ByVal l00E6)
+    End If
+    trend_select.Label1(l00EC).Caption = l00E2 & l00E8 & l00E6
+  Next l00EC
+End Sub
+
+Sub sub07DE (p0142)
+ Load TRENDSv
+ TRENDSv.Show (0)
+ TRENDSv.Left = 0
+ TRENDSv.Top = 0
+ Call sub01C1(0, 9)
+ Call sub0B53(p0142)
+End Sub
+
+Sub sub0B53 (p00FC As Integer)
+Static m00FE(100) As Integer
+Static m0114(100) As Integer
+Dim l012A As Integer
+Dim l012C As Integer
+Dim l012E As Integer
+Dim l0130 As Integer
+Dim l0132 As Integer
+Dim l0134 As Integer
+Dim l0136 As Long
+Dim l0138 As Integer
+Dim l013A As Variant
+Dim l013E As Variant
+ m0016 = -5
+ If (p00FC) Then
+  Call extsub04BA
+  Call extsub0B2B
+ End If
+ For l0130% = 1 To 10
+    gv0332 = extfn0B18(l0130%, l0132%, l0134%, m00FE(0), m0114(0))
+    l0136& = extfn00B4(l0130%)
+    l0136& = extfn00C8(l0136&)
+    TRENDSv.Picture1.DrawMode = 7
+    l012A = extfn0AFA(l0130%)
+    For l0138% = 1 To l012A
+      l013A = l0132% * (l012A - l0138% + 1) - m0016
+      l013E = l013A - l0132%
+      l012C = gv0330 - m00FE(l0138% - 1)
+      l012E = gv0330 - m0114(l0138% - 1)
+     TRENDSv.Picture1.Line (l012C, l013A)-(l012E, l013E), l0136&
+    Next l0138%
+  Next l0130%
+End Sub
+
 Sub sub0B64 (p0020 As Integer)
    model_timer.m_on_it.Checked = (p0020 = 1)
    model_timer.m_off_it.Checked = (p0020 <> 1)
-   If  p0020 = 0 Then
+   If p0020 = 0 Then
     MainForm.Caption = gv001E & "  (Malfunctions Off !)"
    Else
     MainForm.Caption = gv001E & "  (Malfunctions On  !)"
@@ -51,11 +125,11 @@ Dim l0084 As Integer
     For l0084% = 1 To l002C
        l0074 = gv0330 - m0032(l0084% - 1)
        l0076 = gv0330 - m0048(l0084% - 1)
-      If  l0084% < l002C Then
+      If l0084% < l002C Then
        m002E = l0080% * (l002C - l0084%) - m0016
        m0030 = m002E - l0080%
        TRENDSv.Picture1.Line (l0074, m002E)-(l0076, m0030), l007A&
-       If  l0084% > 1 Then
+       If l0084% > 1 Then
         m002E = l0080% * (l002C - l0084% + 1) - m0016
         m0030 = m002E - l0080%
         TRENDSv.Picture1.Line (l0074, m002E)-(l0076, m0030), l007A&
@@ -83,7 +157,7 @@ Dim l00D4 As Long
 Dim l00D6 As Integer
 Dim l00D8 As Integer
 Dim l00DA As Integer
- If  gv0334 = 0 Then
+ If gv0334 = 0 Then
   Call extsub04BA
   Call extsub0B2B
  End If
@@ -101,11 +175,11 @@ Dim l00DA As Integer
     For l00DA% = 1 To l0086
        l00CE = gv0330 - m008C(l00DA% - 1)
        l00D0 = gv0330 - m00A2(l00DA% - 1)
-      If  l00DA% < l0086 Then
+      If l00DA% < l0086 Then
        m0088 = l00D6% * (l0086 - l00DA%) - m0016
        m008A = m0088 - l00D6%
        TRENDSv.Picture1.Line (l00CE, m0088)-(l00D0, m008A), l00D4&
-       If  l00DA% > 1 Then
+       If l00DA% > 1 Then
         m0088 = l00D6% * (l0086 - l00DA% + 1) - m0016
         m008A = m0088 - l00D6%
         TRENDSv.Picture1.Line (l00CE, m0088)-(l00D0, m008A), l00D4&
@@ -130,76 +204,3 @@ Sub sub0B91 ()
   Call extsub04B0
 End Sub
 
-Sub sub01C1 (p00DC As Integer, p00DE As Integer)
-Dim l00E2 As String * 25
-Dim l00E6 As String * 20
-Dim l00E8 As String
-Dim l00EC As Variant
-Dim l00F0 As Integer
-Dim l00F2 As Long
-Dim l00F4 As Long
-Dim l00FA As Integer
-  If  (Not gv0102) Then
-   Exit Sub
-  End If
-  l00E8 = Chr(13) & Chr(10)
-  For l00EC = p00DC% To p00DE%
-   l00F0% = l00EC + 1
-   l00F2& = extfn00B4(l00F0%)
-   l00F4& = extfn00C8(l00F2&)
-   trend_select.Label1(l00EC).ForeColor = l00F4&
-   trend_select.Spin1(l00EC).BackColor = l00F4&
-   l00FA% = extfn00BE(l00F0%)
-    If  l00FA% = 0 Then
-     l00E2 = ""
-     l00E6 = ""
-    ElseIf l00FA% > 0 Then
-     Call extsub00D2(l00FA%, ByVal l00E2)
-     Call extsub00DC(l00FA%, ByVal l00E6)
-    End If
-    trend_select.Label1(l00EC).Caption = l00E2 & l00E8 & l00E6
-  Next l00EC
-End Sub
-
-Sub sub0B53 (p00FC As Integer)
-Static m00FE(100) As Integer
-Static m0114(100) As Integer
-Dim l012A As Integer
-Dim l012C As Integer
-Dim l012E As Integer
-Dim l0130 As Integer
-Dim l0132 As Integer
-Dim l0134 As Integer
-Dim l0136 As Long
-Dim l0138 As Integer
-Dim l013A As Variant
-Dim l013E As Variant
- m0016 = -5
- If  (p00FC) Then
-  Call extsub04BA
-  Call extsub0B2B
- End If
- For l0130% = 1 To 10
-    gv0332 = extfn0B18(l0130%, l0132%, l0134%, m00FE(0), m0114(0))
-    l0136& = extfn00B4(l0130%)
-    l0136& = extfn00C8(l0136&)
-    TRENDSv.Picture1.DrawMode = 7
-    l012A = extfn0AFA(l0130%)
-    For l0138% = 1 To l012A
-      l013A = l0132% * (l012A - l0138% + 1) - m0016
-      l013E = l013A - l0132%
-      l012C = gv0330 - m00FE(l0138% - 1)
-      l012E = gv0330 - m0114(l0138% - 1)
-     TRENDSv.Picture1.Line (l012C, l013A)-(l012E, l013E), l0136&
-    Next l0138%
-  Next l0130%
-End Sub
-
-Sub sub07DE (p0142)
- Load TRENDSv
- TRENDSv.Show (0)
- TRENDSv.Left = 0
- TRENDSv.Top = 0
- Call sub01C1(0, 9)
- Call sub0B53(p0142)
-End Sub

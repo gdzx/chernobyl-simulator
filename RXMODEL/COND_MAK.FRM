@@ -494,3 +494,4 @@ Sub Image3_MouseDown (Index%, Button As Integer, Shift As Integer, X As Single, 
  Image3(Index) = Image1(3)
  Image3(1 - Index) = Image1(0)
 End Sub
+

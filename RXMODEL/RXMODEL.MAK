@@ -51,8 +51,8 @@ PLAY_AVI.FRM
 FO_REPOR.FRM
 MAJOR_SU.FRM
 BUDGET_C.FRM
-ProjWinSize=152,402,248,215
-ProjWinShow=2
+ProjWinSize=194,541,248,215
+ProjWinShow=0
 IconForm="MainForm"
 Title="Chernobyl Reactor Model"
 ExeName="rxmodel.exe"

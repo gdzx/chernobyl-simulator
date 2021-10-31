@@ -166,11 +166,11 @@ Dim l0020 As Integer
 Dim l0024 As Integer
  l001C! = CSng(Index)
  Call extsub0C51(l001C!, 16)
-If  Index = 1 Then
+If Index = 1 Then
  gv008C = 0
  For l0020% = 59 To 61
   l0024% = fn0528(l0020%, Me)
-  If  l0024% > 0 Then
+  If l0024% > 0 Then
    Exit For
   End If
  Next l0020%
@@ -197,10 +197,11 @@ End Sub
 
 Sub Spin2_SpinDown ()
   DoEvents
-  Call extsub0C51(-.005#, 7)
+  Call extsub0C51(-.005, 7)
 End Sub
 
 Sub Spin2_SpinUp ()
   DoEvents
-  Call extsub0C51(.005#, 7)
+  Call extsub0C51(.005, 7)
 End Sub
+

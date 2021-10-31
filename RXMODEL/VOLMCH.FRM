@@ -84,6 +84,18 @@ Dim l004E As Long
  fn098C = l004E&
 End Function
 
+Function fn099B (p0076 As Single, p0078 As Single, p007A As Single) As Integer
+Dim l007C As Integer
+ l007C = Int(p007A)
+ If p007A < p0076 Then
+  l007C = Int(p0076)
+ End If
+ If p007A > p0078 Then
+  l007C = Int(p0078)
+ End If
+ fn099B = l007C
+End Function
+
 Sub Form_Load ()
 Dim l0058 As Integer
 Dim l0060 As Long
@@ -102,21 +114,6 @@ End Sub
 Sub Form_Unload (Cancel As Integer)
  gv0336 = False
 End Sub
-
-Sub sub1CB3 ()
-End Sub
-
-Function fn099B (p0076 As Single, p0078 As Single, p007A As Single) As Integer
-Dim l007C As Integer
- l007C = Int(p007A)
- If  p007A < p0076 Then
-  l007C = Int(p0076)
- End If
- If  p007A > p0078 Then
-  l007C = Int(p0078)
- End If
- fn099B = l007C
-End Function
 
 Sub Picture3_MouseDown (Button As Integer, Shift As Integer, X As Single, Y As Single)
 Dim l0086 As Integer
@@ -139,7 +136,7 @@ Dim l009C As Integer
 Dim l009E As Single
 Dim l00A0 As Long
 Dim l00A2 As Integer
- If  Button = 1 Then
+ If Button = 1 Then
   l009E! = Y - m003E + Picture4.Top
   l009C = fn099B(m0036, m0032, l009E!)
   Picture4.Top = l009C
@@ -147,3 +144,7 @@ Dim l00A2 As Integer
   l00A2% = extfn0222(0, l00A0&)
  End If
 End Sub
+
+Sub sub1CB3 ()
+End Sub
+

@@ -92,10 +92,10 @@ Dim l0024 As String
 Dim l0028 As Integer
 Dim l002A As Integer
 l0024 = Chr(13) & Chr(10)
- If  Index = 0 Then
-  If  gv008C <> 0 Then
+ If Index = 0 Then
+  If gv008C <> 0 Then
    l0028% = extfn0264(gv008C, 2)
-   If  l0028% < 0 Then
+   If l0028% < 0 Then
     l0020 = "Comrade, have you checked the budget lately ?"
     l0020 = l0020 & l0024 & "You do not have enough money in the budget"
     l0020 = l0020 & l0024 & "to hire an expensive contractor."
@@ -104,7 +104,7 @@ l0024 = Chr(13) & Chr(10)
    End If
   ElseIf gv008E <> 0 Then
    l0028% = extfn0264(gv008E, 0)
-   If  l0028% < 0 Then
+   If l0028% < 0 Then
     l0020 = "Comrade, have you checked the budget lately ?"
     l0020 = l0020 & l0024 & "You do not have enough money in the budget"
     l0020 = l0020 & l0024 & "to repair the defective equipment."
@@ -112,7 +112,7 @@ l0024 = Chr(13) & Chr(10)
    End If
   End If
  End If
- If  PLAY_AVI.WindowState = 0 Then
+ If PLAY_AVI.WindowState = 0 Then
    PLAY_AVI.WindowState = 1
  End If
  Unload FO_Report
@@ -122,13 +122,13 @@ Sub Form_Load ()
  gv0098 = True
  FO_Report.Top = gv0094
  FO_Report.Left = gv0096
- If  FO_Report.Top + FO_Report.Height > Screen.Height Then
+ If FO_Report.Top + FO_Report.Height > Screen.Height Then
   FO_Report.Top = FO_Report.Top - FO_Report.Height
  End If
- If  FO_Report.Left + FO_Report.Width > Screen.Width Then
+ If FO_Report.Left + FO_Report.Width > Screen.Width Then
   FO_Report.Left = Screen.Width - FO_Report.Width - 30
  End If
- If  FO_Report.Left < 30 Then
+ If FO_Report.Left < 30 Then
   FO_Report.Left = 30
  End If
  Call sub0A23(Me, 1)
@@ -138,3 +138,4 @@ Sub Form_Unload (Cancel As Integer)
  Call sub0730
  gv0098 = False
 End Sub
+

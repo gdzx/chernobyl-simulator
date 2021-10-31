@@ -99,6 +99,19 @@ Sub Command1_Click ()
 Unload about
 End Sub
 
+Function fn1A14 (p0160 As Integer) As String
+Dim l0162 As String
+m0024 = extfn0C01("user.exe")
+m0026 = extfn19F4(m0024, p0160, m0030, Len(m0030))
+l0162 = Left$(m0030, m0026)
+fn1A14 = l0162
+End Function
+
+Sub Form_Load ()
+ Call sub1A02(MainForm, "Chernobyl Simulator")
+ Call sub0A23(Me, 1)
+End Sub
+
 Sub sub1A02 (p0142 As Form, ByVal p0144 As String)
 Dim l0146 As Double
 Dim l0154 As Integer
@@ -127,33 +140,21 @@ m0130 = m0130 & m002A & "for technical support"
 Label1(2).Caption = m0130
 m0026 = extfn19F4(m0024, 516, m0030, Len(m0030))
 l0154% = InStr(1, m0030, "4.")
-If  l0154% > 0 Then
+If l0154% > 0 Then
  l0156 = "95  Version " & Left$(m0030, 4)
 Else
  l0156 = "Version " & Left$(m0030, m0026)
 End If
 l0146 = extfn10E5(0) / 1024
-If  l0146 >= 1000 Then
+If l0146 >= 1000 Then
  l0146 = l0146 / 1000
  m0130 = "Memory " & Format(l0146, "###,##0.0") & " MB Free"
 Else
  m0130 = "Memory " & Format(l0146, "###,##0") & " KB Free"
 End If
 m0130 = "Microsoft Windows " & l0156 & m002A & m002A & m0130
-l0146 = extfn10F5(0) / 100 + .005#
+l0146 = extfn10F5(0) / 100 + .005
 m0130 = m0130 & m002A & m002A & "System Resources " & Format(l0146, "#00%") & " Free"
 Label1(3).Caption = m0130
 End Sub
 
-Sub Form_Load ()
- Call sub1A02(MainForm, "Chernobyl Simulator")
- Call sub0A23(Me, 1)
-End Sub
-
-Function fn1A14 (p0160 As Integer) As String
-Dim l0162 As String
-m0024 = extfn0C01("user.exe")
-m0026 = extfn19F4(m0024, p0160, m0030, Len(m0030))
-l0162 = Left$(m0030, m0026)
-fn1A14 = l0162
-End Function

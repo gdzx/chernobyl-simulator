@@ -24,13 +24,13 @@ Dim l0044 As String
  On Error GoTo L10A4
  p0032 = Dir(p0032)
  On Error GoTo 0
- If  p0032 <> "" And p0034 = mc0036 Then
+ If p0032 <> "" And p0034 = mc0036 Then
   l0040 = l0044 & l003E
   l0040 = l0040 & "This file already exists !" & l003E & l003E
   l0040 = l0040 & "Replace existing file ?" & l003E
   l003A = MsgBox(l0040, 65, "Save File Message")
-  If  l003A = 1 And Len(l0044) Then
-    If  InStr(l0044, "*") <= 0 And InStr(l0044, "?") <= 0 Then
+  If l003A = 1 And Len(l0044) Then
+    If InStr(l0044, "*") <= 0 And InStr(l0044, "?") <= 0 Then
      Kill l0044
     End If
   End If
@@ -44,7 +44,7 @@ Dim l0044 As String
  Else
   l003A = 1
  End If
- If  l003A > 1 Then
+ If l003A > 1 Then
   fn01EB = 0
  Else
   fn01EB = 1
@@ -71,7 +71,7 @@ Dim l004E As Integer
  l004C = Mid$(gv00D0, 1&, l004E%)
  l004A = CurDir & "\" & p0048
  On Error GoTo L11E4
- If  (Dir(l004A) = UCase(p0048)) Then
+ If (Dir(l004A) = UCase(p0048)) Then
   fn01FB = l004A
  Else
   GoTo L11E4
@@ -82,7 +82,7 @@ Exit Function
 L11E4:
  l004A = l004C & "\" & p0048
  On Error GoTo L1256
- If  (Dir(l004A) = UCase(p0048)) Then
+ If (Dir(l004A) = UCase(p0048)) Then
   fn01FB = l004A
  Else
   GoTo L1256
@@ -92,6 +92,15 @@ Exit Function
 
 L1256:
  fn01FB = ""
+End Function
+
+Function fn0222 () As Integer
+Dim l0078 As Integer
+Dim l007E As Integer
+  l0078% = extfn014E("chrnob.dll")
+  fn0222 = l0078%
+  l007E% = extfn015D(l0078%, gv0028, 128)
+  gv0028 = Mid$(gv0028, 1&, l007E%)
 End Function
 
 Sub sub020F ()
@@ -119,7 +128,7 @@ Dim l006A As Long
  l005C = "HELPDIR"
  l0050 = extfn01B8(l005A, l005C, l005E, l0054, Len(l0054), l0056)
  l0068% = InStr(1, l0054, "\", 1)
- If  l0068% > 0 And l0068% < 4 Then
+ If l0068% > 0 And l0068% < 4 Then
   l006A& = l0068% + 1
   gv01D0 = Mid$(l0054, l006A&, l0050 - l0068%)
  Else
@@ -135,7 +144,7 @@ Dim l006A As Long
  l005C = "AVI FILES"
  l0050 = extfn01B8(l005A, l005C, l005E, l0054, Len(l0054), l0056)
  l0068% = InStr(1, l0054, "\", 1)
- If  l0068% > 0 And l0068% < 4 Then
+ If l0068% > 0 And l0068% < 4 Then
   l006A& = l0068% + 1
   gv00C0 = Mid$(l0054, l006A&, l0050 - l0068%)
  Else
@@ -150,21 +159,12 @@ Dim l006A As Long
  gv00C8 = extfn01D3(l005A, l005C, l0058, l0056)
 End Sub
 
-Function fn0222 () As Integer
-Dim l0078 As Integer
-Dim l007E As Integer
-  l0078% = extfn014E("chrnob.dll")
-  fn0222 = l0078%
-  l007E% = extfn015D(l0078%, gv0028, 128)
-  gv0028 = Mid$(gv0028, 1&, l007E%)
-End Function
-
 Sub sub0236 ()
 Dim l0084 As Integer
  l0084% = Forms.Count
  Do While l0084% > 0
   Unload Forms(l0084% - 1)
-  If  l0084% = Forms.Count Then Exit Do
+  If l0084% = Forms.Count Then Exit Do
   l0084% = l0084% - 1
  Loop
 End Sub
@@ -177,3 +177,4 @@ Dim l0088 As Integer
    l0088% = extfn0172(p0086)
   Loop
 End Sub
+

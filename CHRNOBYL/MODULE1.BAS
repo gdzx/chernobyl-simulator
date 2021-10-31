@@ -13,7 +13,7 @@ End Sub
 
 Sub sub008B (p0010 As Form, p0012 As String, ByVal p0014 As String)
 Dim l0016 As String
-If  p0014 = "0" Then
+If p0014 = "0" Then
  l0016 = App.Title
 Else
  l0016 = p0014

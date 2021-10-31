@@ -282,3 +282,4 @@ End Sub
 Sub Form_Unload (Cancel As Integer)
  gv0104 = False
 End Sub
+

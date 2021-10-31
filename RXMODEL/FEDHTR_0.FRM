@@ -347,11 +347,6 @@ Sub Form_Unload (Cancel As Integer)
  gv00EE = False
 End Sub
 
-Sub sub0F02 ()
-' Const mc0024 = 2 ' &H2%
- Call sub077D
-End Sub
-
 Sub restore_it_Click ()
 ' Const mc0024 = 2 ' &H2%
  Call sub078B
@@ -360,6 +355,16 @@ End Sub
 Sub save_it_Click ()
 ' Const mc0024 = 2 ' &H2%
  Call sub0795
+End Sub
+
+Sub sub0F02 ()
+' Const mc0024 = 2 ' &H2%
+ Call sub077D
+End Sub
+
+Sub sub0FD5 ()
+' Const mc0024 = 2 ' &H2%
+ Call sub07F1
 End Sub
 
 Sub tile_h_it_Click ()
@@ -377,7 +382,3 @@ Sub trend_it_Click ()
  Call sub07D2
 End Sub
 
-Sub sub0FD5 ()
-' Const mc0024 = 2 ' &H2%
- Call sub07F1
-End Sub

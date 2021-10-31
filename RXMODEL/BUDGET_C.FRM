@@ -144,3 +144,4 @@ End Sub
 Sub Form_Unload (Cancel As Integer)
  gv0106 = False
 End Sub
+
