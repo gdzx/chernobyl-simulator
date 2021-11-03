@@ -982,7 +982,7 @@ Begin Form turbine_s_ctrl
 End
 ' TURBN_SC.FRM
 Option Explicit
-Declare Sub extsub0C47 Lib "chrnob.dll" Alias "SETTRB" (p1 As Any, p2%)
+Declare Sub extsub0C47 Lib "chrnob.dll" Alias "SETTRB" (p1!, p2%)
 
 Sub Command1_Click (Index%)
 Dim l001C As Single
