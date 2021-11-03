@@ -100,7 +100,7 @@ End Function
 Function fn092B () As Integer
 Dim l00A0 As Integer
 Dim l00A2 As Integer
-  l00A0% = extfn082B(gv011C)
+  l00A0% = extfn082B(RTrim(gv011C))
   fn092B = l00A0%
   l00A2% = extfn083A(l00A0%, gv011C, 128)
   gv011C = Mid$(gv011C, 1&, l00A2%)

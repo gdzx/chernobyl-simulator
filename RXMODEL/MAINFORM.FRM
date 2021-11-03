@@ -426,7 +426,7 @@ Dim l0196 As Integer
   gv009C = extfn08C8(1)
   gv001E = "Chernobyl RBMK Reactor Unit 3"
   gv011C = "chrnob.dll"
-  gv0118 = extfn0C01(gv011C)
+  gv0118 = extfn0C01(RTrim(gv011C))
   If gv0118 = 0 Then
    gv0118 = fn092B()
    gv009C = 4
