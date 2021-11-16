@@ -365,6 +365,9 @@ Dim l016E As Integer
 If gv019E Then
  Exit Sub
 End If
+If gNoFuel Then
+  Call restoreFuel
+End If
 If gv01A0 Then
   If gv0114 > 32 Then
    l014A% = extfn084F(gv0114)

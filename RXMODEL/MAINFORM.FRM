@@ -129,6 +129,10 @@ Begin MDIForm MainForm
          Caption         =   "Malfunctions"
          Checked         =   -1  'True
       End
+      Begin Menu fuel_it 
+         Caption         =   "Fuel"
+         Checked         =   -1  'True
+      End
    End
 End
 ' MAINFORM.FRM
@@ -330,6 +334,15 @@ Dim l00FA As Integer
     l00F6 = l00F6 & l00F0 & "to clean up all the dropped fuel in core."
     l00FA% = MsgBox(l00F6, 64, "Budget Office Memo")
    End If
+End Sub
+
+Sub fuel_it_Click ()
+    fuel_it.Checked = gNoFuel
+    gNoFuel = Not gNoFuel
+
+    If gNoFuel Then
+        Call saveFuel
+    End If
 End Sub
 
 Sub Ful_ch_it_Click ()
