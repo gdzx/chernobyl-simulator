@@ -87,6 +87,7 @@ Dim l013E As Variant
 End Sub
 
 Sub sub0B64 (p0020 As Integer)
+   MainForm.malf_it.Checked = p0020
    model_timer.m_on_it.Checked = (p0020 = 1)
    model_timer.m_off_it.Checked = (p0020 <> 1)
    If p0020 = 0 Then

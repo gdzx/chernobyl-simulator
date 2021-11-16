@@ -123,6 +123,13 @@ Begin MDIForm MainForm
          Index           =   0
       End
    End
+   Begin Menu extras 
+      Caption         =   "Extras"
+      Begin Menu malf_it 
+         Caption         =   "Malfunctions"
+         Checked         =   -1  'True
+      End
+   End
 End
 ' MAINFORM.FRM
 Option Explicit
@@ -405,6 +412,12 @@ End Sub
 
 Sub major_it_Click ()
  Call sub076D
+End Sub
+
+Sub malf_it_Click ()
+ gv0090 = (gv0090 + 1) Mod 2
+ Call extsub0C5B(2, gv0090)
+ sub0B64 (gv0090)
 End Sub
 
 Sub MDIForm_DragOver (Source As Control, X As Single, Y As Single, State As Integer)
