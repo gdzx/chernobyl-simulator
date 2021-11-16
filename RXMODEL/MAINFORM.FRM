@@ -125,6 +125,9 @@ Begin MDIForm MainForm
    End
    Begin Menu extras 
       Caption         =   "Extras"
+      Begin Menu pause_it 
+         Caption         =   "Pause"
+      End
       Begin Menu malf_it 
          Caption         =   "Malfunctions"
          Checked         =   -1  'True
@@ -619,6 +622,11 @@ End Sub
 
 Sub over_v_it_Click ()
  Call sub079F
+End Sub
+
+Sub pause_it_Click ()
+  gv019E = Not gv019E
+  pause_it.Checked = gv019E
 End Sub
 
 Sub restore_it_Click ()
