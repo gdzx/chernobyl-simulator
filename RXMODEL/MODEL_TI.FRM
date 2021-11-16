@@ -573,7 +573,9 @@ If gv0022 >= gv0006 Then
  If gv0082 Then
   Call sub04CE
  End If
- Call sub0508(100)
+ If Not gNoVideos Then
+   Call sub0508(100)
+ End If
  gv0022 = 0
  m013C = m013C + 1
  gv01B2 = extfn00E6()

@@ -136,6 +136,10 @@ Begin MDIForm MainForm
          Caption         =   "Fuel"
          Checked         =   -1  'True
       End
+      Begin Menu videos_it 
+         Caption         =   "Videos"
+         Checked         =   -1  'True
+      End
    End
 End
 ' MAINFORM.FRM
@@ -844,5 +848,10 @@ End Sub
 Sub turbine_f_it_Click ()
 ' Const mc01DA = 2 ' &H2%
  Call sub07F1
+End Sub
+
+Sub videos_it_Click ()
+    gNoVideos = Not gNoVideos
+    videos_it.Checked = Not videos_it.Checked
 End Sub
 
