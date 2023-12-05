@@ -30,6 +30,11 @@ an introduction to the game.
 [man_scan]: https://github.com/gdzx/chernobyl-simulator/releases/download/v0.1.0/chernobyl-manual-scan.pdf
 [man_conv]: https://github.com/gdzx/chernobyl-simulator/releases/download/v0.1.0/chernobyl-manual-conv.pdf
 
+To run the game, use the shortcuts added by the installer to the Windows Start
+Menu:
+
+![Start Menu shortcuts](start-menu.png)
+
 There are 2 versions of the manual:
 
 - Scan of the copy distributed with the original game.
