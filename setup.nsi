@@ -6,7 +6,7 @@
 
 !define NAME "Chernobyl Simulator"
 !define MAJOR 0
-!define MINOR 1
+!define MINOR 2
 !define PATCH 0
 !define VERSION "${MAJOR}.${MINOR}.${PATCH}"
 
@@ -72,6 +72,9 @@ VIAddVersionKey "LegalCopyright" "Copyright (c) 1998 Silsoft Software Developmen
 Section "Install"
   SetOutPath "$INSTDIR"
 
+  IfFileExists "$INSTDIR\uninstall.exe" 0 +1
+  ExecWait '"$INSTDIR\uninstall.exe" /S _?=$INSTDIR'
+
   WriteUninstaller "$INSTDIR\uninstall.exe"
 
   File /r "redist"
@@ -82,8 +85,6 @@ Section "Install"
   File /r patch\*
   File /r otvdm
   File /r icons
-
-  WriteRegStr HKLM "SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32" vidc.iv41 ir41_32.ax
 
   WriteRegStr HKLM "SOFTWARE\${NAME}" Major "${MAJOR}"
   WriteRegStr HKLM "SOFTWARE\${NAME}" Minor "${MINOR}"
@@ -105,8 +106,6 @@ Section "Uninstall"
   RMDir /r "$SMPROGRAMS\${NAME}"
 
   DeleteRegKey HKLM "SOFTWARE\${NAME}"
-
-  DeleteRegKey HKLM "SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\vidc.iv41"
 
   RMDir /r "$INSTDIR"
 SectionEnd

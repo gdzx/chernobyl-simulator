@@ -22,11 +22,11 @@ an introduction to the game.
 
 | Type   | Version | Download                                |
 | ------ | ------- | --------------------------------------- |
-| Setup  | 0.1.0   | [`chernobyl-setup.exe`][setup]          |
+| Setup  | 0.2.0   | [`chernobyl-setup.exe`][setup]          |
 | Manual | (scan)  | [`chernobyl-manual-scan.pdf`][man_scan] |
 | Manual | (conv)  | [`chernobyl-manual-conv.pdf`][man_conv] |
 
-[setup]: https://github.com/gdzx/chernobyl-simulator/releases/download/v0.1.0/chernobyl-setup.exe
+[setup]: https://github.com/gdzx/chernobyl-simulator/releases/download/v0.2.0/chernobyl-setup.exe
 [man_scan]: https://github.com/gdzx/chernobyl-simulator/releases/download/v0.1.0/chernobyl-manual-scan.pdf
 [man_conv]: https://github.com/gdzx/chernobyl-simulator/releases/download/v0.1.0/chernobyl-manual-conv.pdf
 
