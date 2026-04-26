@@ -454,6 +454,7 @@ Dim l0180 As Integer
 Dim l0184 As Integer
 Dim l018C As Integer
 Dim l0196 As Integer
+  ChDir "C:\Chrnobyl"
   gv0024 = 0
   l015E = Chr(13) & Chr(10)
   gv009C = extfn08C8(1)
