@@ -1,0 +1,13 @@
+AV_INTRO.FRM
+MCIWNDX.VBX
+MAIN.TXT
+MODULE1.BAS
+MODULE2.BAS
+MODULE3.BAS
+MODULE4.BAS
+INFO_DIS.FRM
+ProjWinSize=152,402,248,215
+ProjWinShow=0
+IconForm="avi_intro"
+Title="CHRNOBYL"
+ExeName="chrnobyl.exe"

@@ -1,0 +1,21 @@
+' main.txt - global definitions
+Global gv0006 As Variant
+Global gv0016 As String
+Global gv001A As String
+Global gv001E As Integer
+Global gv0022 As String * 128
+Global gv00A2 As Integer
+Global gv00A4 As Variant
+Global gv00B4 As String
+Global gv00B8 As String
+Global gv00BC As String
+Global gv00C0 As Integer
+Global gv00C4 As Integer
+Global gv00C6 As Integer
+Global gv00C8 As Integer
+Global gv00CC As String * 256
+Global gv01CC As String
+Global gv01D4 As String
+Global gv01D8(15) As String
+Global gv01F0 As String
+
