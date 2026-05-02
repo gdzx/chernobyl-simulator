@@ -54,6 +54,30 @@ _Extras_:
 - _Fuel_: freezes fuel burnup.
 - _Videos_: blocks video popups.
 
+## Hacking
+
+The supporting programs (RXMODEL, ICSELECT, etc.) are Visual Basic 3.0
+executables. They were extracted using DoDi's VB3 Decompiler. If you want to
+modify and recompile them, you can follow these steps:
+
+1. Download the Microsoft Visual Basic 3 Professional installation disks from
+   [WinWorldPC](https://winworldpc.com/product/microsoft-visual-bas/30).
+
+2. Extract all disk images into separate directories named `disks1`, `disks2`,
+   `disks3`, etc.
+
+3. Open the setup disk (`disks1/setup.exe`) through `otvdmw.exe` installed in
+   `C:\Chrnobyl\otvdm\` to start the installation.
+
+4. After installation, launch the Visual Basic IDE by opening `C:\VB\VB.exe`
+   through `otvdmw.exe`.
+
+5. Open one of the project files (RXMODEL, ICSELECT, etc.) and make your
+   changes.
+
+6. Compile to an `.exe` inside `C:\Chrnobyl\` and test by running it through
+   `otvdmw.exe`.
+
 ## Acknowledgements
 
 - [_otvdm_](https://github.com/otya128/winevdm): 16-bit Windows emulator based
