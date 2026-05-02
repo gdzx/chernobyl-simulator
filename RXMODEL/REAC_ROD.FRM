@@ -2093,10 +2093,14 @@ Sub Form_Unload (Cancel As Integer)
 End Sub
 
 Sub Image1_DragOver (Source As Control, X As Single, Y As Single, State As Integer)
- gv00BC = True
- gv00BE = -1
- gv00C0 = False
- gv00C4 = False
+ If Source Is Image1 Then
+   gv00BC = True
+   gv00BE = -1
+   gv00C0 = False
+   gv00C2 = -1
+   gv00C4 = False
+   gv00C6 = -1
+ End If
 End Sub
 
 Sub Image2_DragDrop (Index%, Source As Control, X As Single, Y As Single)
@@ -2122,13 +2126,17 @@ End If
 End Sub
 
 Sub Image2_DragOver (Index%, Source As Control, X As Single, Y As Single, State As Integer)
- If gv00BC Then
-    gv00BE = Index
+ If Source Is Image2(Index) Then
+   gv00BC = False
+   gv00BE = -1
+   gv00C0 = True
+   gv00C2 = Index
+   gv00C4 = False
+   gv00C6 = -1
+ ElseIf gv00BC Then
+   gv00BE = Index
  ElseIf gv00C4 Then
-  gv00C6 = Index
- ElseIf Not gv00C0 Then
-    gv00C0 = True
-    gv00C2 = Index
+   gv00C6 = Index
  End If
 End Sub
 
@@ -2145,10 +2153,14 @@ gv00C2 = -1
 End Sub
 
 Sub Image5_DragOver (Source As Control, X As Single, Y As Single, State As Integer)
- gv00C4 = True
- gv00C6 = -1
- gv00BC = False
- gv00C0 = False
+ If Source Is Image5 Then
+   gv00C0 = False
+   gv00C2 = -1
+   gv00C4 = True
+   gv00C6 = -1
+   gv00BC = False
+   gv00BE = -1
+ End If
 End Sub
 
 Sub Label10_DragDrop (Source As Control, X As Single, Y As Single)
@@ -2198,8 +2210,14 @@ If gv00C0 Then
 End If
 gv00BC = False
 gv00C0 = False
-gv00C0 = False
 gv00C2 = -1
+gv00C4 = False
+gv00C6 = -1
+End Sub
+
+Sub Picture2_DragOver (Source As Control, X As Single, Y As Single, State As Integer)
+  gv00BE = -1
+  gv00C6 = -1
 End Sub
 
 Sub Spin1_DragDrop (Index%, Source As Control, X As Single, Y As Single)
