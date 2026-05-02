@@ -1,7 +1,7 @@
 Declare Function GETFUL Lib "chrnob.dll" Alias "GETFUL" (p1 As Integer, p2 As Integer) As Single
 Declare Sub SETFUL Lib "chrnob.dll" Alias "SETFUL" (p1 As Single, p2 As Integer, p3 As Integer)
 
-Global Const gVersion = "0.1.0"
+Global Const gVersion = "0.3.0"
 
 Global gNoFuel As Integer
 Global gNoVideos As Integer
